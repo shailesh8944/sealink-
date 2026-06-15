@@ -8,6 +8,16 @@ After GitHub Pages is enabled, the site will be available at:
 
 **https://shailesh8944.github.io/sealink-/**
 
+## Pages
+
+| Page | File |
+|------|------|
+| Home | `index.html` |
+| About | `about.html` |
+| Contact | `contact.html` |
+
+Contact form emails **info@sealinkelectric.com** via [FormSubmit](https://formsubmit.co). On first use, check that inbox and click the activation link FormSubmit sends.
+
 ## Local preview
 
 ```bash

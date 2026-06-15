@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Sealink Electric and Software — maritime AI, AFCOS pilots, and fleet integrations." />
+  <title>Contact Us — Sealink</title>
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
+  <meta name="theme-color" content="#060f1e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <span class="logo-badge">
+          <img class="logo-mark" src="assets/logo-mark.png" alt="" width="48" height="48" />
+        </span>
+        <span class="logo-wordmark">
+          <span class="logo-title">Sealink</span>
+          <span class="logo-tagline">Electric &amp; Software</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="index.html#afcos" data-nav="afcos">AFCOS</a>
+        <a href="contact.html" data-nav="contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contact us</p>
+        <h1>Get in <span>touch</span></h1>
+        <p class="page-lead">
+          Fill in the form below and we will respond to your enquiry at
+          <a class="inline-link" href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <div class="contact-info card card-accent">
+          <h2>Sealink Electric and Software Pvt Ltd</h2>
+          <p>Maritime AI · Fuel optimization · Digital ship systems</p>
+          <ul class="contact-details">
+            <li>
+              <span class="detail-label">Email</span>
+              <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
+            </li>
+            <li>
+              <span class="detail-label">Enquiries</span>
+              <span>AFCOS pilots · Fleet integrations · R&amp;D partnerships</span>
+            </li>
+          </ul>
+        </div>
+
+        <form
+          class="contact-form card"
+          action="https://formsubmit.co/info@sealinkelectric.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New enquiry from Sealink website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://sealinkelectric.com/thank-you.html" />
+          <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+91 …" />
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organisation</label>
+              <input type="text" id="company" name="company" autocomplete="organization" placeholder="Optional" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject <span aria-hidden="true">*</span></label>
+            <input type="text" id="subject" name="subject" required placeholder="e.g. AFCOS pilot enquiry" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project or question…"></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-full" type="submit">Send message</button>
+          <p class="form-note">By submitting, you agree that we may contact you regarding your enquiry.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Sealink Electric and Software Pvt Ltd. All rights reserved.</p>
+      <p class="footer-meta">
+        <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

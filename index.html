@@ -16,7 +16,7 @@
 <body>
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="logo" href="#top">
+      <a class="logo" href="index.html">
         <span class="logo-badge">
           <img class="logo-mark" src="assets/logo-mark.png" alt="" width="48" height="48" />
         </span>
@@ -29,10 +29,10 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="site-nav" aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#afcos">AFCOS</a>
-        <a href="#technology">Technology</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="#afcos" data-nav="afcos">AFCOS</a>
+        <a href="contact.html" data-nav="contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
@@ -49,7 +49,7 @@
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#afcos">Explore AFCOS</a>
-          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+          <a class="btn btn-ghost" href="contact.html">Contact us</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
@@ -68,49 +68,9 @@
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <p class="section-label">01 — About Sealink</p>
-        <div class="about-grid">
-          <div>
-            <h2>Marine technology, engineered for operational reality</h2>
-            <p>
-              Sealink Electric and Software Pvt Ltd develops software and digital systems for
-              ships and maritime operators. Our work combines machine learning, naval architecture
-              physics, and live operational data to help crews sail safer, cleaner, and more efficiently.
-            </p>
-            <p>
-              We are building AFCOS — an AI-Based Fuel Consumption Optimization System — with
-              applications across Indian Coast Guard operations, commercial tankers, and future
-              multi-vessel fleet deployments.
-            </p>
-          </div>
-          <div class="about-cards">
-            <article class="card card-accent">
-              <h3>Mission</h3>
-              <p>Deliver indigenous maritime AI that crews can trust — transparent, override-safe, and validated against real sea trials.</p>
-            </article>
-            <article class="card">
-              <h3>Focus areas</h3>
-              <ul class="check-list">
-                <li>Fuel &amp; voyage optimization</li>
-                <li>Engine performance monitoring</li>
-                <li>Weather-aware routing intelligence</li>
-                <li>CII / compliance support</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Ecosystem</h3>
-              <p class="card-meta">Pre-incubated at Nirmaan, IIT Madras · iDEX DISC 14 applicant</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-dark" id="afcos">
       <div class="container">
-        <p class="section-label">02 — Flagship product</p>
+        <p class="section-label">01 — Flagship product</p>
         <div class="product-header">
           <div>
             <h2>AFCOS</h2>
@@ -159,7 +119,7 @@
 
     <section class="section" id="technology">
       <div class="container">
-        <p class="section-label">03 — Technology stack</p>
+        <p class="section-label">02 — Technology stack</p>
         <div class="tech-layout">
           <div>
             <h2>Physics + data, not black-box guesses</h2>
@@ -199,19 +159,19 @@
       </div>
     </section>
 
-    <section class="section section-cta" id="contact">
+    <section class="section section-cta">
       <div class="container cta-panel">
         <div>
-          <p class="section-label">04 — Contact</p>
+          <p class="section-label">03 — Get in touch</p>
           <h2>Partner with Sealink</h2>
           <p>
             Interested in AFCOS pilots, fleet integrations, or custom maritime software?
-            Reach out to discuss defence, commercial, or R&amp;D collaborations.
+            Tell us about your project on our contact page.
           </p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:info@sealink.co.in">info@sealink.co.in</a>
-          <a class="btn btn-ghost" href="https://github.com/shailesh8944" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-primary" href="contact.html">Contact us</a>
+          <a class="btn btn-ghost" href="about.html">About us</a>
         </div>
       </div>
     </section>
@@ -220,7 +180,9 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Sealink Electric and Software Pvt Ltd. All rights reserved.</p>
-      <p class="footer-meta">Maritime AI · Fuel optimization · Digital ship systems</p>
+      <p class="footer-meta">
+        <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
+      </p>
     </div>
   </footer>
 
