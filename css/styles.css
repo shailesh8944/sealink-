@@ -31,6 +31,11 @@ body {
   line-height: 1.65;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -201,14 +206,36 @@ a {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0, 212, 184, 0.12), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(14, 52, 96, 0.5), transparent 60%),
-    linear-gradient(180deg, var(--deep), var(--navy));
   z-index: 0;
+  overflow: hidden;
+  background:
+    url("../assets/hero-ship.png") 70% center / cover no-repeat,
+    var(--navy);
+}
+
+.hero-ship {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, var(--navy) 0%, rgba(6, 15, 30, 0.9) 30%, rgba(6, 15, 30, 0.45) 52%, rgba(6, 15, 30, 0.1) 68%, transparent 82%),
+    linear-gradient(180deg, rgba(6, 15, 30, 0.35) 0%, transparent 25%, transparent 78%, rgba(6, 15, 30, 0.85) 100%);
+  pointer-events: none;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 760px;
 }
 
@@ -413,6 +440,37 @@ h2 {
   margin-bottom: 36px;
 }
 
+.ship-showcase {
+  position: relative;
+  margin: 0 0 40px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ship-showcase img {
+  width: 100%;
+  max-width: none;
+  height: clamp(200px, 32vw, 320px);
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.ship-showcase-caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: linear-gradient(transparent, rgba(6, 15, 30, 0.92));
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -556,9 +614,47 @@ h2 {
 
 /* Inner pages */
 .page-hero {
+  position: relative;
   padding: calc(var(--header-h) + 64px) 0 48px;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(11, 26, 48, 0.55), transparent);
+  overflow: hidden;
+}
+
+.page-hero--ship {
+  padding: calc(var(--header-h) + 80px) 0 64px;
+  background: none;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 15, 30, 0.92) 0%, rgba(6, 15, 30, 0.7) 45%, rgba(6, 15, 30, 0.45) 100%),
+    linear-gradient(180deg, rgba(6, 15, 30, 0.5) 0%, transparent 35%, rgba(6, 15, 30, 0.85) 100%);
+}
+
+.page-hero--subtle .page-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(6, 15, 30, 0.94) 0%, rgba(6, 15, 30, 0.82) 55%, rgba(6, 15, 30, 0.65) 100%),
+    linear-gradient(180deg, rgba(6, 15, 30, 0.6) 0%, transparent 40%, rgba(6, 15, 30, 0.9) 100%);
+}
+
+.page-hero--ship .container {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero h1 {
@@ -819,5 +915,14 @@ h2 {
   .product-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-ship {
+    object-position: 75% center;
+  }
+
+  .ship-showcase-caption {
+    flex-direction: column;
+    gap: 6px;
   }
 }
