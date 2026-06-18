@@ -211,10 +211,10 @@ export default function HomeClient() {
               transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
             >
               <img
-                src="/assets/afcos-dashboard-1.png"
+                src="/assets/afcos-dashboard-2.png"
                 alt="AFCOS voyage monitoring dashboard showing MV Indus Guardian route with weather overlay"
-                width={900}
-                height={560}
+                width={1854}
+                height={960}
                 loading="lazy"
                 decoding="async"
               />
@@ -224,7 +224,7 @@ export default function HomeClient() {
                   AFCOS plots the vessel's waypoints over real-time wind and wave data. The route
                   from East Africa to India is overlaid with sea-state arrows, letting the system
                   calculate added resistance and adjust speed recommendations before conditions are reached.
-                  Predicted consumption: <em>13.4 MT/day</em>.
+                  Predicted consumption: <em>13.2 MT/day</em>.
                 </span>
               </figcaption>
             </motion.figure>
@@ -236,10 +236,10 @@ export default function HomeClient() {
               transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
             >
               <img
-                src="/assets/afcos-dashboard-2.png"
+                src="/assets/afcos-dashboard-1.png"
                 alt="AFCOS engine dynamics panel showing updated fuel prediction after speed adjustment"
-                width={900}
-                height={560}
+                width={1854}
+                height={960}
                 loading="lazy"
                 decoding="async"
               />
@@ -247,9 +247,8 @@ export default function HomeClient() {
                 <strong>Engine dynamics and updated fuel forecast</strong>
                 <span>
                   After recalculating at the next waypoint, AFCOS updates its forecast to{' '}
-                  <em>13.2 MT/day</em> — a direct result of an optimised speed recommendation.
-                  The right-hand panel shows live engine power, RPM, SFOC, scavenge pressure,
-                  and ship draft, all feeding the physics model in real time.
+                  <em>13.4 MT/day</em> — the right-hand panel shows live engine power, RPM, SFOC,
+                  scavenge pressure, and ship draft, all feeding the physics model in real time.
                 </span>
               </figcaption>
             </motion.figure>
