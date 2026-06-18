@@ -1004,6 +1004,80 @@ h2 {
   pointer-events: none;
 }
 
+/* ─── AFCOS dashboard preview ─── */
+.dashboard-intro {
+  margin-bottom: 24px;
+}
+
+.dashboard-heading {
+  font-family: var(--font-bebas), "Bebas Neue", sans-serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  letter-spacing: 1.5px;
+  margin: 0 0 10px;
+  color: var(--white);
+}
+
+.dashboard-sub {
+  max-width: 760px;
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.dashboard-shot {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(12, 35, 64, 0.12);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.dashboard-shot:hover {
+  box-shadow: 0 8px 40px rgba(0, 151, 167, 0.18);
+  transform: translateY(-3px);
+}
+
+.dashboard-shot img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.dashboard-caption {
+  padding: 16px 18px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+}
+
+.dashboard-caption strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.dashboard-caption span {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.dashboard-caption em {
+  color: var(--teal);
+  font-style: normal;
+  font-weight: 500;
+}
+
 /* ─── Careers ─── */
 .careers-grid {
   display: grid;
@@ -1115,7 +1189,8 @@ h2 {
   .contact-layout,
   .why-grid,
   .impact-grid,
-  .careers-grid {
+  .careers-grid,
+  .dashboard-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1199,7 +1274,8 @@ h2 {
   .form-row,
   .why-grid,
   .impact-grid,
-  .careers-grid {
+  .careers-grid,
+  .dashboard-grid {
     grid-template-columns: 1fr;
   }
 

@@ -190,7 +190,72 @@ export default function HomeClient() {
               </figcaption>
             </figure>
           </FadeUp>
-          <div className="feature-grid">
+          {/* Live dashboard screenshots */}
+          <FadeUp delay={0.15}>
+            <div className="dashboard-intro">
+              <p className="section-label" style={{ marginTop: 40 }}>Live system — MV Indus Guardian</p>
+              <h3 className="dashboard-heading">AFCOS running at sea, not in a lab</h3>
+              <p className="dashboard-sub">
+                These are real screenshots from an active AFCOS deployment on MV Indus Guardian,
+                tracking a voyage across the Indian Ocean. The system fuses live GPS position,
+                engine telemetry, and open-ocean weather data to continuously update its fuel forecast.
+              </p>
+            </div>
+          </FadeUp>
+          <div className="dashboard-grid">
+            <motion.figure
+              className="dashboard-shot"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
+            >
+              <img
+                src="/assets/afcos-dashboard-1.png"
+                alt="AFCOS voyage monitoring dashboard showing MV Indus Guardian route with weather overlay"
+                width={900}
+                height={560}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="dashboard-caption">
+                <strong>Route intelligence with live weather fusion</strong>
+                <span>
+                  AFCOS plots the vessel's waypoints over real-time wind and wave data. The route
+                  from East Africa to India is overlaid with sea-state arrows, letting the system
+                  calculate added resistance and adjust speed recommendations before conditions are reached.
+                  Predicted consumption: <em>13.4 MT/day</em>.
+                </span>
+              </figcaption>
+            </motion.figure>
+            <motion.figure
+              className="dashboard-shot"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+            >
+              <img
+                src="/assets/afcos-dashboard-2.png"
+                alt="AFCOS engine dynamics panel showing updated fuel prediction after speed adjustment"
+                width={900}
+                height={560}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="dashboard-caption">
+                <strong>Engine dynamics and updated fuel forecast</strong>
+                <span>
+                  After recalculating at the next waypoint, AFCOS updates its forecast to{' '}
+                  <em>13.2 MT/day</em> — a direct result of an optimised speed recommendation.
+                  The right-hand panel shows live engine power, RPM, SFOC, scavenge pressure,
+                  and ship draft, all feeding the physics model in real time.
+                </span>
+              </figcaption>
+            </motion.figure>
+          </div>
+
+          <div className="feature-grid" style={{ marginTop: 48 }}>
             {features.map((f, i) => (
               <motion.article
                 key={f.num}
