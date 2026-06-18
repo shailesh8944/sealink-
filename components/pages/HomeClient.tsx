@@ -20,6 +20,39 @@ const features = [
   { num: '06', title: 'Fleet learning', desc: 'Adaptive models that improve as more vessel operational data is ingested.' },
 ]
 
+const whyDifferent = [
+  {
+    label: '01',
+    title: 'Built on physics, not just patterns',
+    desc: 'Most optimization tools learn purely from historical data, which works fine until conditions change. AFCOS combines real ship hull and engine physics with live weather and sea-state data, so it can predict exactly how the engine will behave and how much load it\'ll need to handle in the conditions ahead — not just guess from past patterns. That\'s what makes its fuel optimization more accurate, even on routes and conditions it hasn\'t seen before. We\'re actively testing this on new routes to make sure it holds up in the real world, not just on paper.',
+  },
+  {
+    label: '02',
+    title: 'Designed with engine health in mind',
+    desc: 'Because AFCOS understands how the engine actually behaves under different loads and sea conditions, it\'s designed to recommend speeds and power settings that protect the engine over the long run — not just save fuel today at the cost of wear and tear tomorrow.',
+  },
+  {
+    label: '03',
+    title: 'The crew stays in command',
+    desc: 'AFCOS makes recommendations — it doesn\'t take over. Every suggestion comes with clear overrides and alerts, so the people on the bridge stay in charge.',
+  },
+]
+
+const impactCards = [
+  {
+    label: 'Fleet economics',
+    desc: 'Most fleet optimization systems ask you to install new hardware or commit to a long, expensive rollout before you see any benefit. AFCOS is software-first — built so fleets can start saving fuel without a major upfront investment or a multi-year integration project.',
+  },
+  {
+    label: 'Emissions',
+    desc: 'Every bit of fuel saved is carbon that doesn\'t get burned. Our target of 15% fuel savings isn\'t just a cost number — it\'s a direct cut in emissions per voyage, and a real step toward the decarbonization goals the shipping industry is being pushed toward.',
+  },
+  {
+    label: 'Sovereignty',
+    desc: 'Built and trained in India, AFCOS gives defence and commercial fleets a system they can trust with sensitive voyage and engine data — without routing that data through a foreign-owned platform.',
+  },
+]
+
 const techTags = ['Python / ML', 'XGBoost', 'MVEM engine core', 'Open-Meteo / ERA5', 'Voyage monitor UI', 'Docker-ready']
 
 const metrics = [
@@ -103,6 +136,23 @@ export default function HomeClient() {
         </motion.div>
       </section>
 
+      {/* Pain Point */}
+      <section className="section pain-point-section">
+        <div className="container">
+          <FadeUp>
+            <div className="pain-point-block">
+              <p>
+                Most ships today are stuck choosing between two things: burn less fuel, or protect
+                the engine. Push speed and power too hard to save fuel, and you wear the engine down
+                faster. Play it too safe, and you're leaving savings on the table. AFCOS doesn't
+                make you choose — because it actually understands how the engine behaves, not just
+                how much fuel it's burning.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* AFCOS */}
       <section className="section section-dark" id="afcos">
         <div className="container">
@@ -159,11 +209,39 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Technology */}
-      <section className="section" id="technology">
+      {/* Why AFCOS is different */}
+      <section className="section" id="why-afcos">
         <div className="container">
           <FadeUp>
-            <p className="section-label">02 — Technology stack</p>
+            <p className="section-label">02 — What makes it work</p>
+          </FadeUp>
+          <FadeUp delay={0.05}>
+            <h2>Why AFCOS is different</h2>
+          </FadeUp>
+          <div className="why-grid">
+            {whyDifferent.map((card, i) => (
+              <motion.article
+                key={card.label}
+                className="why-card"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.55, delay: i * 0.1, ease: 'easeOut' }}
+              >
+                <div className="why-card-num">{card.label}</div>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology */}
+      <section className="section section-dark" id="technology">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">03 — Technology stack</p>
           </FadeUp>
           <FadeUp delay={0.05}>
             <div className="tech-layout">
@@ -200,12 +278,36 @@ export default function HomeClient() {
         </div>
       </section>
 
+      {/* Why it matters */}
+      <section className="section" id="impact">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">04 — Why it matters</p>
+          </FadeUp>
+          <div className="impact-grid">
+            {impactCards.map((card, i) => (
+              <motion.article
+                key={card.label}
+                className="impact-card"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.55, delay: i * 0.1, ease: 'easeOut' }}
+              >
+                <span className="impact-label">{card.label}</span>
+                <p>{card.desc}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section section-cta">
         <FadeUp className="container">
           <div className="cta-panel">
             <div>
-              <p className="section-label">03 — Get in touch</p>
+              <p className="section-label">05 — Get in touch</p>
               <h2>Partner with Sealink</h2>
               <p>
                 Interested in AFCOS pilots, fleet integrations, or custom maritime software?

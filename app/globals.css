@@ -509,6 +509,112 @@ h2 {
   color: var(--muted);
 }
 
+/* Pain point bridge section */
+.pain-point-section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pain-point-block {
+  max-width: 820px;
+  padding: 28px 32px;
+  border-left: 3px solid var(--teal);
+  background: rgba(0, 212, 184, 0.04);
+  border-radius: 0 4px 4px 0;
+}
+
+.pain-point-block p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* Why AFCOS is different */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.why-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--teal);
+  border-radius: 4px;
+  padding: 28px 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-card:hover {
+  box-shadow: 0 0 0 1px var(--teal-mid);
+}
+
+.why-card-num {
+  font-family: var(--font-mono), "DM Mono", monospace;
+  font-size: 11px;
+  color: var(--teal);
+  margin-bottom: 14px;
+}
+
+.why-card h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--white);
+}
+
+.why-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Impact / Why it matters */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.impact-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.impact-card:hover {
+  border-color: var(--teal-mid);
+  box-shadow: 0 0 0 1px var(--teal-dim);
+}
+
+.impact-label {
+  display: inline-block;
+  font-family: var(--font-mono), "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  padding: 6px 10px;
+  border: 1px solid var(--teal-mid);
+  border-radius: 3px;
+  background: var(--teal-dim);
+}
+
+.impact-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 /* Technology */
 .tech-layout {
   display: grid;
@@ -877,7 +983,9 @@ h2 {
   .tech-layout,
   .feature-grid,
   .metrics,
-  .contact-layout {
+  .contact-layout,
+  .why-grid,
+  .impact-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -947,8 +1055,14 @@ h2 {
   .metrics,
   .tech-layout,
   .contact-layout,
-  .form-row {
+  .form-row,
+  .why-grid,
+  .impact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pain-point-block {
+    padding: 20px 20px 20px 18px;
   }
 
   .product-header {
