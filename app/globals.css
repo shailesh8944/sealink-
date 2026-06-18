@@ -692,6 +692,38 @@ h2 {
   color: var(--white);
 }
 
+/* Contact hero — gradient background (no ship image) */
+.page-hero--contact {
+  padding: calc(var(--header-h) + 80px) 0 64px;
+  background:
+    radial-gradient(ellipse 65% 80% at 80% 50%, rgba(0, 212, 184, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 60% at 10% 20%, rgba(0, 212, 184, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(11, 26, 48, 0.8) 0%, transparent 70%),
+    linear-gradient(135deg, #030810 0%, #060f1e 35%, #091626 65%, #0b1a30 100%);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.contact-hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--teal-mid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--teal-mid) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.06;
+  mask-image: radial-gradient(ellipse 70% 80% at 85% 50%, black 0%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 85% 50%, black 0%, transparent 65%);
+}
+
+.contact-address {
+  font-style: normal;
+  font-size: 14px;
+  color: var(--white);
+  line-height: 1.7;
+}
+
 /* Contact */
 .contact-layout {
   display: grid;

@@ -18,11 +18,8 @@ function FadeUp({ children, delay = 0, className }: { children: React.ReactNode;
 export default function ContactClient() {
   return (
     <main>
-      <section className="page-hero page-hero--ship page-hero--subtle">
-        <div className="page-hero-bg" aria-hidden="true">
-          <img src="/assets/hero-ship.png" alt="" width={1920} height={800} loading="lazy" decoding="async" />
-          <div className="page-hero-overlay" />
-        </div>
+      <section className="page-hero page-hero--contact">
+        <div className="contact-hero-decor" aria-hidden="true" />
         <div className="container">
           <motion.p
             className="eyebrow"
@@ -63,6 +60,14 @@ export default function ContactClient() {
                 <li>
                   <span className="detail-label">Email</span>
                   <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
+                </li>
+                <li>
+                  <span className="detail-label">Registered Office</span>
+                  <address className="contact-address">
+                    Garthauli, Chaubeypur<br />
+                    Varanasi, Uttar Pradesh<br />
+                    India — 221104
+                  </address>
                 </li>
                 <li>
                   <span className="detail-label">Enquiries</span>
