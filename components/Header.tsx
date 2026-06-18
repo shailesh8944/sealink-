@@ -17,6 +17,7 @@ export default function Header() {
 
   const isHome = pathname === '/' || pathname === ''
   const isAbout = pathname.startsWith('/about')
+  const isCareers = pathname.startsWith('/careers')
   const isContact = pathname.startsWith('/contact')
 
   function close() {
@@ -57,6 +58,9 @@ export default function Header() {
           </Link>
           <Link href="/#afcos" onClick={close}>
             AFCOS
+          </Link>
+          <Link href="/careers" className={isCareers ? 'active' : ''} onClick={close}>
+            Careers
           </Link>
           <Link href="/contact" className={`nav-cta${isContact ? ' active' : ''}`} onClick={close}>
             Contact
