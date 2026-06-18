@@ -177,8 +177,8 @@ export default function HomeClient() {
           <FadeUp delay={0.12}>
             <figure className="ship-showcase">
               <img
-                src="/assets/hero-ship.png"
-                alt="Container vessel with digital twin overlay — AFCOS fuel optimization"
+                src="/assets/voyage-optimisation.jpg"
+                alt="Container vessel at sea — AFCOS fuel and voyage optimization"
                 width={1120}
                 height={400}
                 loading="lazy"

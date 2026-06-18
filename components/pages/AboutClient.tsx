@@ -39,7 +39,7 @@ export default function AboutClient() {
     <main>
       <section className="page-hero page-hero--ship">
         <div className="page-hero-bg" aria-hidden="true">
-          <img src="/assets/hero-ship.png" alt="" width={1920} height={800} loading="lazy" decoding="async" />
+          <img src="/assets/vpo-spot.jpg" alt="" width={1920} height={800} loading="lazy" decoding="async" />
           <div className="page-hero-overlay" />
         </div>
         <div className="container">
