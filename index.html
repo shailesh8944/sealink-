@@ -93,6 +93,139 @@
             <span>Real-time vessel intelligence</span>
           </figcaption>
         </figure>
+
+        <div class="afcos-methodology">
+          <p class="section-label">Physics-informed AI</p>
+          <h3 class="methodology-title">The Sealink Advantage: Physics-Governed Vessel Optimization</h3>
+          <p class="methodology-lead">
+            Unlike conventional voyage optimization tools that rely strictly on historical black-box data,
+            Sealink utilizes a <strong>hybrid Digital Twin framework driven by Physics-Informed Artificial
+            Intelligence (PIAI)</strong>. By embedding deep hydrodynamic and thermodynamic principles
+            directly into our neural networks, we ensure our machine learning models respect the physical
+            laws of maritime engineering.
+          </p>
+          <p class="methodology-lead">
+            This eliminates the risk of unphysical AI predictions and delivers unparalleled accuracy in
+            forecasting hull, propeller, and engine performance deterioration over time.
+          </p>
+
+          <div class="methodology-block">
+            <h4>1. The Core Architecture: A Complete Digital Twin</h4>
+            <p>
+              Our system integrates high-fidelity physical modeling across three critical domains to train
+              and govern our AI engines:
+            </p>
+
+            <div class="physics-figure-grid">
+              <figure class="physics-figure">
+                <img src="assets/afcos-digital-twin.png" alt="AFCOS digital twin — CFD hull modeling, engine thermodynamics, propeller simulation, and neural network optimization" width="960" height="540" loading="lazy" decoding="async" />
+                <figcaption>Integrated physics-informed AI — hull, engine, and propeller models fused in real time</figcaption>
+              </figure>
+              <figure class="physics-figure">
+                <img src="assets/afcos-piai-framework.png" alt="PIAI framework — hull CFD analysis, 2-stroke engine and propeller modeling feeding a deep neural network optimization layer" width="960" height="540" loading="lazy" decoding="async" />
+                <figcaption>CFD hull analysis, propulsion system modeling, and DNN optimization layer</figcaption>
+              </figure>
+            </div>
+
+            <div class="architecture-flow" aria-hidden="true">
+              <span>CFD Hull Model</span>
+              <span class="flow-arrow">→</span>
+              <span>Propeller Model</span>
+              <span class="flow-arrow">→</span>
+              <span>Engine Thermodynamic Model</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-highlight">Integrated Physics-Informed AI</span>
+              <span class="flow-arrow">→</span>
+              <span>Real-Time Voyage &amp; Engine Room Optimization</span>
+            </div>
+
+            <ul class="methodology-list">
+              <li>
+                <strong>Hydrodynamic Hull Modeling (CFD &amp; Analytical):</strong>
+                We construct a complete Computational Fluid Dynamics (CFD) model of the vessel's hull to
+                accurately map flow lines, wake fields, and wave-making resistance under varying draft and
+                trim conditions. To bridge the gap between heavy offline simulations and real-time computing,
+                we embed a dynamic, real-time mathematical model for hull resistance directly into the AI's
+                loss functions.
+              </li>
+              <li>
+                <strong>Third-Party Propeller Modeling:</strong>
+                Using specialized, high-fidelity propeller simulation software, we model open-water
+                characteristics, cavitation inception, and thrust/torque coefficients (K<sub>T</sub>,
+                K<sub>Q</sub>) to map accurate propeller efficiency contours across the entire operational
+                profile.
+              </li>
+              <li>
+                <strong>Deep Engine Room Thermodynamic Modeling:</strong>
+                Leveraging advanced internal combustion simulation tools, we model the complete thermodynamic
+                cycle of the large-bore 2-stroke main propulsion engine. This captures complex variables like
+                mean effective pressure, turbocharger matching, and specific fuel oil consumption (SFOC) loops
+                under real-time thermal loads.
+              </li>
+            </ul>
+          </div>
+
+          <div class="methodology-block">
+            <h4>2. Predictive Capabilities &amp; Performance Deterioration</h4>
+            <p>
+              By coupling these physics models with cascading neural network layers, the Sealink platform does
+              not just monitor the vessel — it <strong>predicts micro-level deterioration</strong> by
+              identifying deviations between real-world sensor data and ideal physical baselines:
+            </p>
+            <ul class="methodology-list">
+              <li>
+                <strong>Hull Biofouling &amp; Resistance Tracking:</strong>
+                The AI isolates weather and structural dynamics to accurately calculate the added resistance
+                (ΔR) caused by marine growth and hull roughness, predicting optimal dry-dock and hull-cleaning
+                intervals.
+              </li>
+              <li>
+                <strong>Propeller Degradation:</strong>
+                By monitoring structural slip and torque variations against the baseline propeller model, the
+                system flags performance decay due to fouling or cavitation-induced blade erosion.
+              </li>
+              <li>
+                <strong>Engine &amp; Machinery Component Wear:</strong>
+                The system tracks the thermodynamic health of the engine room. It predicts thermal efficiency
+                drops, liner wear, injection system deterioration, and overall auxiliary sub-system
+                degradation before they trigger high-temperature alarms or component failures.
+              </li>
+            </ul>
+          </div>
+
+          <div class="methodology-block">
+            <h4>3. Summary of Differentiation</h4>
+            <div class="compare-table-wrap">
+              <table class="compare-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Feature</th>
+                    <th scope="col">Standard AI Optimization Tools</th>
+                    <th scope="col">Sealink Physics-Governed AI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Data dependency</th>
+                    <td>Requires massive historical datasets; highly vulnerable to data gaps or sensor anomalies.</td>
+                    <td>Operates accurately even with sparse data because the system is anchored by physical laws.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Operational extrapolation</th>
+                    <td>Poor performance when extrapolating to unprecedented weather conditions or new routes.</td>
+                    <td>Safely extrapolates across all operating envelopes because physics constraints dictate the boundaries.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Root-cause diagnostics</th>
+                    <td>Tells you <em>that</em> efficiency is dropping, but cannot accurately pinpoint <em>why</em>.</td>
+                    <td>Isolates exactly whether the loss stems from hull fouling, propeller decay, or internal engine deterioration.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
         <div class="feature-grid">
           <article class="feature">
             <div class="feature-icon">01</div>
