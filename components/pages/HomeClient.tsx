@@ -53,15 +53,6 @@ const impactCards = [
   },
 ]
 
-const techTags = ['Python / ML', 'XGBoost', 'MVEM engine core', 'Open-Meteo / ERA5', 'Voyage monitor UI', 'Docker-ready']
-
-const metrics = [
-  { value: '294+', label: 'Training voyages (Magenta Ray)' },
-  { value: '107', label: 'Features per operational row' },
-  { value: '100%', label: 'Position coverage on route data' },
-  { value: '6-cylinder', label: 'Two-stroke ME engine model' },
-]
-
 function FadeUp({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div
@@ -449,52 +440,11 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Technology */}
-      <section className="section section-dark" id="technology">
-        <div className="container">
-          <FadeUp>
-            <p className="section-label">03 — Technology stack</p>
-          </FadeUp>
-          <FadeUp delay={0.05}>
-            <div className="tech-layout">
-              <div>
-                <h2>Physics + data, not black-box guesses</h2>
-                <p>
-                  AFCOS is built on Holtrop-Mennen resistance theory, MAN B&amp;W engine physics,
-                  gradient-boosted fuel models, and open marine weather APIs — validated on
-                  294+ operational rows from MT Magenta Ray and expanding multi-vessel datasets.
-                </p>
-              </div>
-              <div className="tech-tags">
-                {techTags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </div>
-          </FadeUp>
-          <div className="metrics">
-            {metrics.map((m, i) => (
-              <motion.div
-                key={m.label}
-                className="metric card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
-              >
-                <strong>{m.value}</strong>
-                <span>{m.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why it matters */}
       <section className="section" id="impact">
         <div className="container">
           <FadeUp>
-            <p className="section-label">04 — Why it matters</p>
+            <p className="section-label">03 — Why it matters</p>
           </FadeUp>
           <div className="impact-grid">
             {impactCards.map((card, i) => (
@@ -519,7 +469,7 @@ export default function HomeClient() {
         <FadeUp className="container">
           <div className="cta-panel">
             <div>
-              <p className="section-label">05 — Get in touch</p>
+              <p className="section-label">04 — Get in touch</p>
               <h2>Partner with Sealink</h2>
               <p>
                 Interested in AFCOS pilots, fleet integrations, or custom maritime software?
