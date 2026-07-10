@@ -188,12 +188,12 @@ export default function HomeClient() {
           {/* Live dashboard screenshots */}
           <FadeUp delay={0.15}>
             <div className="dashboard-intro">
-              <p className="section-label" style={{ marginTop: 40 }}>Live system — MV Indus Guardian</p>
+              <p className="section-label" style={{ marginTop: 40 }}>Live system — MT TRF Kirkenes</p>
               <h3 className="dashboard-heading">AFCOS running at sea, not in a lab</h3>
               <p className="dashboard-sub">
-                These are real screenshots from an active AFCOS deployment on MV Indus Guardian,
-                tracking a voyage across the Indian Ocean. The system fuses live GPS position,
-                engine telemetry, and open-ocean weather data to continuously update its fuel forecast.
+                These are real screens from an active AFCOS deployment aboard MT TRF Kirkenes —
+                covering voyage planning, IMO CII compliance, seakeeping safety, and bunker planning
+                in one connected platform.
               </p>
             </div>
           </FadeUp>
@@ -206,20 +206,43 @@ export default function HomeClient() {
               transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
             >
               <img
-                src="/assets/afcos-dashboard-2.png"
-                alt="AFCOS voyage monitoring dashboard showing MV Indus Guardian route with weather overlay"
-                width={1854}
-                height={960}
+                src="/assets/afcos-voyage-planning.jpg"
+                alt="AFCOS Planning Station showing an ECDIS voyage plan, wave height along route, and leg-by-leg RPM schedule"
+                width={1600}
+                height={831}
                 loading="lazy"
                 decoding="async"
               />
               <figcaption className="dashboard-caption">
-                <strong>Route intelligence with live weather fusion</strong>
+                <strong>Voyage planning</strong>
                 <span>
-                  AFCOS plots the vessel's waypoints over real-time wind and wave data. The route
-                  from East Africa to India is overlaid with sea-state arrows, letting the system
-                  calculate added resistance and adjust speed recommendations before conditions are reached.
-                  Predicted consumption: <em>13.2 MT/day</em>.
+                  The Planning Station lays a full ECDIS-based passage plan over live weather,
+                  comparing candidate routes by fuel burn, duration, worst-leg wave height, and CII
+                  rating before a voyage is approved.
+                </span>
+              </figcaption>
+            </motion.figure>
+            <motion.figure
+              className="dashboard-shot"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+            >
+              <img
+                src="/assets/afcos-cii-compliance.jpg"
+                alt="AFCOS CII Compliance dashboard showing fleet attained vs required Carbon Intensity Indicator ratings and a what-if simulator"
+                width={1600}
+                height={831}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="dashboard-caption">
+                <strong>CII compliance</strong>
+                <span>
+                  A fleet-wide dashboard tracks attained vs. required IMO Carbon Intensity Indicator,
+                  A–E ratings, and multi-year deterioration trends, with a what-if simulator for
+                  speed, biofuel blend, and off-hire scenarios.
                 </span>
               </figcaption>
             </motion.figure>
@@ -231,19 +254,43 @@ export default function HomeClient() {
               transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
             >
               <img
-                src="/assets/afcos-dashboard-1.png"
-                alt="AFCOS engine dynamics panel showing updated fuel prediction after speed adjustment"
-                width={1854}
-                height={960}
+                src="/assets/afcos-seakeeping.jpg"
+                alt="AFCOS Seakeeping screen showing an MSC.1/Circ.1228 operational polar and righting-arm (GZ) stability curve"
+                width={1600}
+                height={831}
                 loading="lazy"
                 decoding="async"
               />
               <figcaption className="dashboard-caption">
-                <strong>Engine dynamics and updated fuel forecast</strong>
+                <strong>Seakeeping analysis</strong>
                 <span>
-                  After recalculating at the next waypoint, AFCOS updates its forecast to{' '}
-                  <em>13.4 MT/day</em> — the right-hand panel shows live engine power, RPM, SFOC,
-                  scavenge pressure, and ship draft, all feeding the physics model in real time.
+                  Built on IMO MSC.1/Circ.1228, the seakeeping screen maps surf-riding, synchronous,
+                  and parametric roll risk across every heading and speed, alongside the vessel's
+                  righting-arm (GZ) stability curve.
+                </span>
+              </figcaption>
+            </motion.figure>
+            <motion.figure
+              className="dashboard-shot"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            >
+              <img
+                src="/assets/afcos-bunker-planning.jpg"
+                alt="AFCOS Bunker and Fuel Planning screen showing a remaining-on-board and arrival-reserve calculator"
+                width={1600}
+                height={831}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="dashboard-caption">
+                <strong>Bunker planning</strong>
+                <span>
+                  A remaining-on-board and arrival-reserve calculator projects HFO/LSMGO left at
+                  arrival and how much to bunker before departure to hold a target days-of-steaming
+                  reserve.
                 </span>
               </figcaption>
             </motion.figure>
