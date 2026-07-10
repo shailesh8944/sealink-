@@ -464,6 +464,43 @@ export default function HomeClient() {
         </div>
       </section>
 
+      {/* Incubation */}
+      <section className="section" id="incubation">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">Incubation</p>
+          </FadeUp>
+          <FadeUp delay={0.05}>
+            <div className="incubation-panel">
+              <div className="incubation-logos">
+                <img
+                  src="/assets/dst-logo.png"
+                  alt="Department of Science &amp; Technology (DST), Government of India"
+                  width={198}
+                  height={71}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="incubation-divider" aria-hidden="true" />
+                <img
+                  src="/assets/dst-nidhi-logo.png"
+                  alt="DST NIDHI — Start-to-Scale Startup Support"
+                  width={203}
+                  height={72}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <p className="incubation-text">
+                Sealink Electric and Software is incubated under the <strong>DST NIDHI</strong>{' '}
+                cohort program of the Department of Science &amp; Technology, Government of India,
+                conducted at <strong>IIT Madras</strong>.
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section section-cta">
         <FadeUp className="container">

@@ -706,6 +706,44 @@ h2 {
   color: var(--muted);
 }
 
+/* ─── Incubation ─── */
+.incubation-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 32px 40px;
+  border: 1px solid rgba(12, 35, 64, 0.1);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(12, 35, 64, 0.06);
+}
+
+.incubation-logos {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.incubation-logos img {
+  height: 56px;
+  width: auto;
+}
+
+.incubation-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(12, 35, 64, 0.15);
+}
+
+.incubation-text {
+  margin: 0;
+  max-width: 560px;
+  color: var(--muted);
+}
+
 /* ─── CTA (dark panel) ─── */
 .section-cta {
   padding-bottom: 120px;
