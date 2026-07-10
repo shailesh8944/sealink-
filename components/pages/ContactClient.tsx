@@ -64,8 +64,10 @@ export default function ContactClient() {
                 <li>
                   <span className="detail-label">Registered Office</span>
                   <address className="contact-address">
-                    Garthauli, Chaubeypur<br />
-                    Varanasi, Uttar Pradesh<br />
+                    Garthauli, Chaubeypur{' '}
+                    <br />
+                    Varanasi, Uttar Pradesh{' '}
+                    <br />
                     India — 221104
                   </address>
                 </li>
@@ -84,9 +86,8 @@ export default function ContactClient() {
               method="POST"
             >
               <input type="hidden" name="_subject" value="New enquiry from Sealink website" />
-              <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://sealinkelectric.com/thank-you/" />
+              <input type="hidden" name="_next" value="https://www.sealinkelectric.com/thank-you/" />
               <input
                 type="text"
                 name="_honey"

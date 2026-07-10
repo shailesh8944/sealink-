@@ -94,7 +94,7 @@ export default function HomeClient() {
             Sealink Electric and Software Pvt Ltd
           </motion.p>
           <motion.h1 variants={heroItem}>
-            Intelligent systems
+            Intelligent systems{' '}
             <br />
             <span>for the open ocean</span>
           </motion.h1>
