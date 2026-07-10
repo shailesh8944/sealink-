@@ -2,11 +2,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { motion, useScroll, useSpring } from 'framer-motion'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, { stiffness: 220, damping: 32, restDelta: 0.001 })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -26,6 +29,7 @@ export default function Header() {
 
   return (
     <header className={`site-header${scrolled ? ' scrolled' : ''}`} id="top">
+      <motion.div className="scroll-progress" style={{ scaleX: progress }} />
       <div className="container header-inner">
         <Link className="logo" href="/" onClick={close}>
           <span className="logo-badge">

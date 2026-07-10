@@ -1,5 +1,6 @@
 'use client'
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 
 const heroContainer = {
@@ -72,12 +73,19 @@ function FadeUp({ children, delay = 0, className }: { children: React.ReactNode;
 }
 
 export default function HomeClient() {
+  const heroRef = useRef<HTMLElement>(null)
+  const { scrollYProgress: heroProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  })
+  const shipY = useTransform(heroProgress, [0, 1], ['0%', '18%'])
+
   return (
     <main>
       {/* Hero */}
-      <section className="hero">
+      <section className="hero" ref={heroRef}>
         <div className="hero-bg" aria-hidden="true">
-          <img
+          <motion.img
             className="hero-ship"
             src="/assets/hero-ship.png"
             alt=""
@@ -85,6 +93,7 @@ export default function HomeClient() {
             height={800}
             fetchPriority="high"
             decoding="async"
+            style={{ y: shipY }}
           />
           <div className="hero-overlay" />
         </div>
