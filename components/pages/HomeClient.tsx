@@ -18,6 +18,10 @@ const features = [
   { num: '04', title: 'Crew-first safety', desc: 'Explicit override controls, anomaly alerts, and validation workflows for sea trials.' },
   { num: '05', title: 'Weather integration', desc: 'Wave, swell, and wind data fused into added-resistance and voyage planning.' },
   { num: '06', title: 'Fleet learning', desc: 'Adaptive models that improve as more vessel operational data is ingested.' },
+  { num: '07', title: 'Voyage planning', desc: 'Route and speed plans that weigh ETA, fuel cost, and weather constraints across the full passage.' },
+  { num: '08', title: 'Seakeeping analysis', desc: 'Predicts roll, pitch, and slamming in waves, then recommends the heading and speed that keep harsh weather from damaging ship and cargo.' },
+  { num: '09', title: 'Bunker planning', desc: 'Forecasts consumption against bunker prices to optimize purchase timing, quantity, and port selection.' },
+  { num: '10', title: 'CII compliance', desc: 'Tracks and forecasts a vessel\'s IMO Carbon Intensity Indicator (A–E) rating so operators can plan ahead to stay compliant.' },
 ]
 
 const whyDifferent = [
