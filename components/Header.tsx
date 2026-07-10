@@ -33,10 +33,9 @@ export default function Header() {
       <div className="container header-inner">
         <Link className="logo" href="/" onClick={close}>
           <span className="logo-badge">
-            <img className="logo-mark" src="/assets/logo-mark.png" alt="" width={48} height={48} />
+            <img className="logo-mark" src="/assets/logo-mark.png" alt="Sealink" width={64} height={55} />
           </span>
           <span className="logo-wordmark">
-            <span className="logo-title">Sealink</span>
             <span className="logo-tagline">Electric &amp; Software</span>
           </span>
         </Link>

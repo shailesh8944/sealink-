@@ -144,10 +144,9 @@ a {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 52px;
   height: 52px;
-  padding: 4px;
-  border-radius: 12px;
+  padding: 2px 6px;
+  border-radius: 10px;
   background: linear-gradient(145deg, #f4f6fa 0%, #e2e8f0 100%);
   border: 1px solid rgba(12, 35, 64, 0.1);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
@@ -155,7 +154,7 @@ a {
 
 .logo-mark {
   display: block;
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: contain;
 }
@@ -165,18 +164,6 @@ a {
   flex-direction: column;
   gap: 1px;
   min-width: 0;
-}
-
-.logo-title {
-  font-family: var(--font-bebas), "Bebas Neue", sans-serif;
-  font-size: 26px;
-  letter-spacing: 1.5px;
-  line-height: 1;
-  color: var(--dark-text);
-}
-
-.site-header.scrolled .logo-title {
-  color: var(--white);
 }
 
 .logo-tagline {
@@ -1579,13 +1566,8 @@ h2 {
 
 @media (max-width: 680px) {
   .logo-badge {
-    width: 44px;
     height: 44px;
-    border-radius: 10px;
-  }
-
-  .logo-title {
-    font-size: 22px;
+    border-radius: 9px;
   }
 
   .logo-tagline {
