@@ -29,14 +29,14 @@ const openRoles = [
   {
     title: 'ML / AI Engineer',
     type: 'Full-time',
-    location: 'Remote / Varanasi',
+    location: 'Remote',
     tag: 'Engineering',
     desc: 'Build and improve AFCOS fuel prediction models. Work with XGBoost, physics-informed ML, voyage telemetry, and open marine weather APIs. Strong Python and ML fundamentals required.',
   },
   {
     title: 'Full-Stack Developer',
     type: 'Full-time',
-    location: 'Remote / Varanasi',
+    location: 'Remote',
     tag: 'Engineering',
     desc: 'Build the voyage monitoring dashboard and fleet-facing UI. Next.js, React, TypeScript, REST APIs. You care about performance and want the UI to feel as precise as the models behind it.',
   },

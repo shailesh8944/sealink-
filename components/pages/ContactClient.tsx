@@ -62,16 +62,6 @@ export default function ContactClient() {
                   <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
                 </li>
                 <li>
-                  <span className="detail-label">Registered Office</span>
-                  <address className="contact-address">
-                    Garthauli, Chaubeypur{' '}
-                    <br />
-                    Varanasi, Uttar Pradesh{' '}
-                    <br />
-                    India — 221104
-                  </address>
-                </li>
-                <li>
                   <span className="detail-label">Enquiries</span>
                   <span>AFCOS pilots · Fleet integrations · R&amp;D partnerships</span>
                 </li>
