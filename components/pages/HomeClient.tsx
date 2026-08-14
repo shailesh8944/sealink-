@@ -2,6 +2,9 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
+import FadeUp from '@/components/ui/FadeUp'
+import CapabilityCard from '@/components/ui/CapabilityCard'
+import ArchitectureFlow from '@/components/ui/ArchitectureFlow'
 
 const heroContainer = {
   hidden: {},
@@ -12,65 +15,14 @@ const heroItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 }
 
-const features = [
-  { num: '01', title: 'Live fuel intelligence', desc: 'Real-time MT/day consumption display with model-backed forecasts along the route.' },
-  { num: '02', title: 'Speed recommendations', desc: 'Weather-integrated guidance that balances ETA, fuel cost, and operational limits.' },
-  { num: '03', title: 'Engine dynamics', desc: 'Physics-informed two-stroke engine models with SCADA-aligned exhaust and load monitoring.' },
-  { num: '04', title: 'Crew-first safety', desc: 'Explicit override controls, anomaly alerts, and validation workflows for sea trials.' },
-  { num: '05', title: 'Weather integration', desc: 'Wave, swell, and wind data fused into added-resistance and voyage planning.' },
-  { num: '06', title: 'Fleet learning', desc: 'Adaptive models that improve as more vessel operational data is ingested.' },
-  { num: '07', title: 'Voyage planning', desc: 'Route and speed plans that weigh ETA, fuel cost, and weather constraints across the full passage.' },
-  { num: '08', title: 'Seakeeping analysis', desc: 'Predicts roll, pitch, and slamming in waves, then recommends the heading and speed that keep harsh weather from damaging ship and cargo.' },
-  { num: '09', title: 'Bunker planning', desc: 'Forecasts consumption against bunker prices to optimize purchase timing, quantity, and port selection.' },
-  { num: '10', title: 'CII compliance', desc: 'Tracks and forecasts a vessel\'s IMO Carbon Intensity Indicator (A–E) rating so operators can plan ahead to stay compliant.' },
+const coreCapabilities = [
+  { num: '01', title: 'Marine Propulsion', desc: 'Development and integration of compact, efficient and reliable propulsion systems for specialised marine platforms.', href: '/capabilities/marine-propulsion' },
+  { num: '02', title: 'Engine & Propulsion Controls', desc: 'Engine control, electronic control systems, propulsion control, sensors, telemetry and monitoring.', href: '/capabilities/engine-controls' },
+  { num: '03', title: 'Marine Electronics', desc: 'Sensor integration, data acquisition, onboard monitoring, communication and intelligent instrumentation.', href: '/capabilities/marine-electronics' },
+  { num: '04', title: 'Intelligent Propulsion', desc: 'Physics-informed AI, fuel optimisation, performance prediction, diagnostics and digital twins.', href: '/capabilities/intelligent-propulsion' },
+  { num: '05', title: 'Autonomous Maritime Systems', desc: 'Guidance, navigation, vessel control, mission planning and autonomous surface vessel technologies.', href: '/capabilities/autonomous-systems' },
+  { num: '06', title: 'Digital Engineering', desc: 'Simulation, mathematical modelling, digital twins, system architecture and hardware/software integration.', href: '/capabilities/digital-engineering' },
 ]
-
-const whyDifferent = [
-  {
-    label: '01',
-    title: 'Built on physics, not just patterns',
-    desc: 'Most optimization tools learn purely from historical data, which works fine until conditions change. AFCOS combines real ship hull and engine physics with live weather and sea-state data, so it can predict exactly how the engine will behave and how much load it\'ll need to handle in the conditions ahead — not just guess from past patterns. That\'s what makes its fuel optimization more accurate, even on routes and conditions it hasn\'t seen before. We\'re actively testing this on new routes to make sure it holds up in the real world, not just on paper.',
-  },
-  {
-    label: '02',
-    title: 'Designed with engine health in mind',
-    desc: 'Because AFCOS understands how the engine actually behaves under different loads and sea conditions, it\'s designed to recommend speeds and power settings that protect the engine over the long run — not just save fuel today at the cost of wear and tear tomorrow.',
-  },
-  {
-    label: '03',
-    title: 'The crew stays in command',
-    desc: 'AFCOS makes recommendations — it doesn\'t take over. Every suggestion comes with clear overrides and alerts, so the people on the bridge stay in charge.',
-  },
-]
-
-const impactCards = [
-  {
-    label: 'Fleet economics',
-    desc: 'Most fleet optimization systems ask you to install new hardware or commit to a long, expensive rollout before you see any benefit. AFCOS is software-first — built so fleets can start saving fuel without a major upfront investment or a multi-year integration project.',
-  },
-  {
-    label: 'Emissions',
-    desc: 'Every bit of fuel saved is carbon that doesn\'t get burned. Our target of 15% fuel savings isn\'t just a cost number — it\'s a direct cut in emissions per voyage, and a real step toward the decarbonization goals the shipping industry is being pushed toward.',
-  },
-  {
-    label: 'Sovereignty',
-    desc: 'Built and trained in India, AFCOS gives defence and commercial fleets a system they can trust with sensitive voyage and engine data — without routing that data through a foreign-owned platform.',
-  },
-]
-
-function FadeUp({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.55, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number], delay }}
-    >
-      {children}
-    </motion.div>
-  )
-}
 
 export default function HomeClient() {
   const heroRef = useRef<HTMLElement>(null)
@@ -107,61 +59,118 @@ export default function HomeClient() {
             Sealink Electric and Software Pvt Ltd
           </motion.p>
           <motion.h1 variants={heroItem}>
-            Intelligent systems{' '}
+            Indigenous marine propulsion{' '}
             <br />
-            <span>for the open ocean</span>
+            <span>&amp; intelligent maritime systems</span>
           </motion.h1>
           <motion.p className="hero-lead" variants={heroItem}>
-            We build AI-powered maritime software — from real-time fuel optimization and voyage
-            intelligence to physics-informed engine models for defence and commercial fleets.
+            Engineering propulsion, control and intelligent maritime technologies for small craft,
+            defence, specialised marine and autonomous platforms.
           </motion.p>
           <motion.div className="hero-actions" variants={heroItem}>
-            <Link className="btn btn-primary" href="#afcos">
-              Explore AFCOS
+            <Link className="btn btn-primary" href="/capabilities">
+              Explore Capabilities
             </Link>
             <Link className="btn btn-ghost" href="/contact">
-              Contact us
+              Discuss a Technology Project
             </Link>
           </motion.div>
-          <motion.div className="hero-stats" variants={heroItem}>
-            <div className="stat">
-              <strong>15%</strong>
-              <span>Target fuel savings</span>
-            </div>
-            <div className="stat">
-              <strong>Real-time</strong>
-              <span>Voyage &amp; engine insight</span>
-            </div>
-            <div className="stat">
-              <strong>Indigenous</strong>
-              <span>Built in India</span>
-            </div>
+          <motion.div variants={heroItem}>
+            <Link href="/afcos" className="inline-link">
+              Explore AFCOS →
+            </Link>
+          </motion.div>
+          <motion.div className="capability-bar" variants={heroItem}>
+            <span>Propulsion</span>
+            <span>Controls</span>
+            <span>Electronics</span>
+            <span>AI</span>
+            <span>Digital Twins</span>
+            <span>Autonomy</span>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Pain Point */}
+      {/* From Marine Engineering to Maritime Intelligence */}
       <section className="section pain-point-section">
         <div className="container">
           <FadeUp>
+            <p className="section-label">From marine engineering to maritime intelligence</p>
             <div className="pain-point-block">
               <p>
-                Most ships today are stuck choosing between two things: burn less fuel, or protect
-                the engine. Push speed and power too hard to save fuel, and you wear the engine down
-                faster. Play it too safe, and you're leaving savings on the table. AFCOS doesn't
-                make you choose — because it actually understands how the engine behaves, not just
-                how much fuel it's burning.
+                Sealink combines marine engineering, propulsion, control systems, electronics,
+                physics-based modelling and artificial intelligence to develop practical
+                technologies for the next generation of maritime platforms.
               </p>
             </div>
           </FadeUp>
         </div>
       </section>
 
-      {/* AFCOS */}
-      <section className="section section-dark" id="afcos">
+      {/* Core capabilities */}
+      <section className="section section-dark" id="capabilities">
         <div className="container">
           <FadeUp>
-            <p className="section-label">01 — Flagship product</p>
+            <p className="section-label">01 — What we do</p>
+            <h2>Engineering Across the Maritime Technology Stack</h2>
+          </FadeUp>
+          <div className="feature-grid" style={{ marginTop: 28 }}>
+            {coreCapabilities.map((c, i) => (
+              <CapabilityCard key={c.num} num={c.num} title={c.title} desc={c.desc} href={c.href} delay={i * 0.07} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Marine Propulsion */}
+      <section className="section" id="propulsion">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">02 — Marine propulsion</p>
+            <h2>Indigenous Marine Propulsion</h2>
+            <p className="product-intro">
+              Sealink is developing indigenous propulsion technologies for compact marine
+              platforms, with emphasis on efficiency, reliability, maintainability,
+              controllability and integration with modern vessel systems.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <ArchitectureFlow
+              stages={['Engine', 'Fuel / Combustion', 'Engine Control', 'Propulsion', 'Vessel Control', 'Monitoring', 'Intelligent Optimisation']}
+            />
+          </FadeUp>
+          <FadeUp delay={0.1} className="hero-actions" >
+            <Link className="btn btn-primary" href="/capabilities/marine-propulsion">
+              Explore Marine Propulsion
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Intelligent propulsion */}
+      <section className="section section-dark" id="intelligent-propulsion">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">03 — Software &amp; AI</p>
+            <h2>Intelligence Behind the Propulsion System</h2>
+            <p className="product-intro">
+              Our software and AI technologies connect propulsion, vessel performance and
+              operational data to make marine systems measurable, predictable and optimisable.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.1} className="hero-actions">
+            <Link className="btn btn-primary" href="/capabilities/intelligent-propulsion">
+              Explore Intelligent Propulsion
+            </Link>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* AFCOS teaser */}
+      <section className="section" id="afcos">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">04 — Flagship product</p>
           </FadeUp>
           <FadeUp delay={0.05}>
             <div className="product-header">
@@ -169,13 +178,15 @@ export default function HomeClient() {
                 <h2>AFCOS</h2>
                 <p className="product-sub">AI-Based Fuel Consumption Optimization System</p>
               </div>
-              <span className="pill">Defence &amp; commercial ready</span>
+              <span className="pill">Physics-informed voyage &amp; engine optimisation</span>
             </div>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="product-intro">
               AFCOS fuses voyage data, weather, hull resistance models, and engine telemetry to
-              recommend optimal speed and power settings — while keeping the crew in control at all times.
+              recommend optimal speed and power settings — while keeping the crew in control at
+              all times. It is Sealink&apos;s flagship demonstration of engineering knowledge turned
+              into operational software.
             </p>
           </FadeUp>
           <FadeUp delay={0.12}>
@@ -194,333 +205,21 @@ export default function HomeClient() {
               </figcaption>
             </figure>
           </FadeUp>
-          {/* Live dashboard screenshots */}
           <FadeUp delay={0.15}>
             <div className="dashboard-intro">
               <p className="section-label" style={{ marginTop: 40 }}>Live system — MT TRF Kirkenes</p>
               <h3 className="dashboard-heading">AFCOS running at sea, not in a lab</h3>
               <p className="dashboard-sub">
-                These are real screens from an active AFCOS deployment aboard MT TRF Kirkenes —
-                covering voyage planning, IMO CII compliance, seakeeping safety, and bunker planning
-                in one connected platform.
+                Deployed aboard MT TRF Kirkenes, covering voyage planning, IMO CII compliance,
+                seakeeping safety, and bunker planning in one connected platform.
               </p>
             </div>
           </FadeUp>
-          <div className="dashboard-grid">
-            <motion.figure
-              className="dashboard-shot"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
-            >
-              <img
-                src="/assets/afcos-voyage-planning.jpg"
-                alt="AFCOS Planning Station showing an ECDIS voyage plan, wave height along route, and leg-by-leg RPM schedule"
-                width={1600}
-                height={831}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption className="dashboard-caption">
-                <strong>Voyage planning</strong>
-                <span>
-                  The Planning Station lays a full ECDIS-based passage plan over live weather,
-                  comparing candidate routes by fuel burn, duration, worst-leg wave height, and CII
-                  rating before a voyage is approved.
-                </span>
-              </figcaption>
-            </motion.figure>
-            <motion.figure
-              className="dashboard-shot"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
-            >
-              <img
-                src="/assets/afcos-cii-compliance.jpg"
-                alt="AFCOS CII Compliance dashboard showing fleet attained vs required Carbon Intensity Indicator ratings and a what-if simulator"
-                width={1600}
-                height={831}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption className="dashboard-caption">
-                <strong>CII compliance</strong>
-                <span>
-                  A fleet-wide dashboard tracks attained vs. required IMO Carbon Intensity Indicator,
-                  A–E ratings, and multi-year deterioration trends, with a what-if simulator for
-                  speed, biofuel blend, and off-hire scenarios.
-                </span>
-              </figcaption>
-            </motion.figure>
-            <motion.figure
-              className="dashboard-shot"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
-            >
-              <img
-                src="/assets/afcos-seakeeping.jpg"
-                alt="AFCOS Seakeeping screen showing an MSC.1/Circ.1228 operational polar and righting-arm (GZ) stability curve"
-                width={1600}
-                height={831}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption className="dashboard-caption">
-                <strong>Seakeeping analysis</strong>
-                <span>
-                  Built on IMO MSC.1/Circ.1228, the seakeeping screen maps surf-riding, synchronous,
-                  and parametric roll risk across every heading and speed, alongside the vessel's
-                  righting-arm (GZ) stability curve.
-                </span>
-              </figcaption>
-            </motion.figure>
-            <motion.figure
-              className="dashboard-shot"
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-            >
-              <img
-                src="/assets/afcos-bunker-planning.jpg"
-                alt="AFCOS Bunker and Fuel Planning screen showing a remaining-on-board and arrival-reserve calculator"
-                width={1600}
-                height={831}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption className="dashboard-caption">
-                <strong>Bunker planning</strong>
-                <span>
-                  A remaining-on-board and arrival-reserve calculator projects HFO/LSMGO left at
-                  arrival and how much to bunker before departure to hold a target days-of-steaming
-                  reserve.
-                </span>
-              </figcaption>
-            </motion.figure>
-          </div>
-
-          <FadeUp delay={0.18}>
-            <div className="afcos-methodology">
-              <p className="section-label">Physics-informed AI</p>
-              <h3 className="methodology-title">The Sealink Advantage: Physics-Governed Vessel Optimization</h3>
-              <p className="methodology-lead">
-                Unlike conventional voyage optimization tools that rely strictly on historical black-box data,
-                Sealink utilizes a <strong>hybrid Digital Twin framework driven by Physics-Informed Artificial
-                Intelligence (PIAI)</strong>. By embedding deep hydrodynamic and thermodynamic principles
-                directly into our neural networks, we ensure our machine learning models respect the physical
-                laws of maritime engineering.
-              </p>
-              <p className="methodology-lead">
-                This eliminates the risk of unphysical AI predictions and delivers unparalleled accuracy in
-                forecasting hull, propeller, and engine performance deterioration over time.
-              </p>
-
-              <div className="methodology-block">
-                <h4>1. The Core Architecture: A Complete Digital Twin</h4>
-                <p>
-                  Our system integrates high-fidelity physical modeling across three critical domains to train
-                  and govern our AI engines:
-                </p>
-
-                <div className="physics-figure-grid">
-                  <figure className="physics-figure">
-                    <img
-                      src="/assets/afcos-digital-twin.png"
-                      alt="AFCOS digital twin — CFD hull modeling, engine thermodynamics, propeller simulation, and neural network optimization"
-                      width={960}
-                      height={540}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <figcaption>Integrated physics-informed AI — hull, engine, and propeller models fused in real time</figcaption>
-                  </figure>
-                  <figure className="physics-figure">
-                    <img
-                      src="/assets/afcos-piai-framework.png"
-                      alt="PIAI framework — hull CFD analysis, 2-stroke engine and propeller modeling feeding a deep neural network optimization layer"
-                      width={960}
-                      height={540}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <figcaption>CFD hull analysis, propulsion system modeling, and DNN optimization layer</figcaption>
-                  </figure>
-                </div>
-
-                <div className="architecture-flow" aria-hidden="true">
-                  <span>CFD Hull Model</span>
-                  <span className="flow-arrow">→</span>
-                  <span>Propeller Model</span>
-                  <span className="flow-arrow">→</span>
-                  <span>Engine Thermodynamic Model</span>
-                  <span className="flow-arrow">→</span>
-                  <span className="flow-highlight">Integrated Physics-Informed AI</span>
-                  <span className="flow-arrow">→</span>
-                  <span>Real-Time Voyage &amp; Engine Room Optimization</span>
-                </div>
-
-                <ul className="methodology-list">
-                  <li>
-                    <strong>Hydrodynamic Hull Modeling (CFD &amp; Analytical):</strong>{' '}
-                    We construct a complete Computational Fluid Dynamics (CFD) model of the vessel&apos;s hull to
-                    accurately map flow lines, wake fields, and wave-making resistance under varying draft and
-                    trim conditions. To bridge the gap between heavy offline simulations and real-time computing,
-                    we embed a dynamic, real-time mathematical model for hull resistance directly into the AI&apos;s
-                    loss functions.
-                  </li>
-                  <li>
-                    <strong>Third-Party Propeller Modeling:</strong>{' '}
-                    Using specialized, high-fidelity propeller simulation software, we model open-water
-                    characteristics, cavitation inception, and thrust/torque coefficients (K<sub>T</sub>,
-                    K<sub>Q</sub>) to map accurate propeller efficiency contours across the entire operational
-                    profile.
-                  </li>
-                  <li>
-                    <strong>Deep Engine Room Thermodynamic Modeling:</strong>{' '}
-                    Leveraging advanced internal combustion simulation tools, we model the complete thermodynamic
-                    cycle of the large-bore 2-stroke main propulsion engine. This captures complex variables like
-                    mean effective pressure, turbocharger matching, and specific fuel oil consumption (SFOC) loops
-                    under real-time thermal loads.
-                  </li>
-                </ul>
-              </div>
-
-              <div className="methodology-block">
-                <h4>2. Predictive Capabilities &amp; Performance Deterioration</h4>
-                <p>
-                  By coupling these physics models with cascading neural network layers, the Sealink platform does
-                  not just monitor the vessel — it <strong>predicts micro-level deterioration</strong> by
-                  identifying deviations between real-world sensor data and ideal physical baselines:
-                </p>
-                <ul className="methodology-list">
-                  <li>
-                    <strong>Hull Biofouling &amp; Resistance Tracking:</strong>{' '}
-                    The AI isolates weather and structural dynamics to accurately calculate the added resistance
-                    (ΔR) caused by marine growth and hull roughness, predicting optimal dry-dock and hull-cleaning
-                    intervals.
-                  </li>
-                  <li>
-                    <strong>Propeller Degradation:</strong>{' '}
-                    By monitoring structural slip and torque variations against the baseline propeller model, the
-                    system flags performance decay due to fouling or cavitation-induced blade erosion.
-                  </li>
-                  <li>
-                    <strong>Engine &amp; Machinery Component Wear:</strong>{' '}
-                    The system tracks the thermodynamic health of the engine room. It predicts thermal efficiency
-                    drops, liner wear, injection system deterioration, and overall auxiliary sub-system
-                    degradation before they trigger high-temperature alarms or component failures.
-                  </li>
-                </ul>
-              </div>
-
-              <div className="methodology-block">
-                <h4>3. Summary of Differentiation</h4>
-                <div className="compare-table-wrap">
-                  <table className="compare-table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Feature</th>
-                        <th scope="col">Standard AI Optimization Tools</th>
-                        <th scope="col">Sealink Physics-Governed AI</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">Data dependency</th>
-                        <td>Requires massive historical datasets; highly vulnerable to data gaps or sensor anomalies.</td>
-                        <td>Operates accurately even with sparse data because the system is anchored by physical laws.</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Operational extrapolation</th>
-                        <td>Poor performance when extrapolating to unprecedented weather conditions or new routes.</td>
-                        <td>Safely extrapolates across all operating envelopes because physics constraints dictate the boundaries.</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Root-cause diagnostics</th>
-                        <td>Tells you <em>that</em> efficiency is dropping, but cannot accurately pinpoint <em>why</em>.</td>
-                        <td>Isolates exactly whether the loss stems from hull fouling, propeller decay, or internal engine deterioration.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+          <FadeUp delay={0.1} className="hero-actions" style={{ marginTop: 32 }}>
+            <Link className="btn btn-primary" href="/afcos">
+              Explore AFCOS in full
+            </Link>
           </FadeUp>
-
-          <div className="feature-grid" style={{ marginTop: 48 }}>
-            {features.map((f, i) => (
-              <motion.article
-                key={f.num}
-                className="feature"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
-              >
-                <div className="feature-icon">{f.num}</div>
-                <h3>{f.title}</h3>
-                <p>{f.desc}</p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why AFCOS is different */}
-      <section className="section" id="why-afcos">
-        <div className="container">
-          <FadeUp>
-            <p className="section-label">02 — What makes it work</p>
-          </FadeUp>
-          <FadeUp delay={0.05}>
-            <h2>Why AFCOS is different</h2>
-          </FadeUp>
-          <div className="why-grid">
-            {whyDifferent.map((card, i) => (
-              <motion.article
-                key={card.label}
-                className="why-card"
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: 'easeOut' }}
-              >
-                <div className="why-card-num">{card.label}</div>
-                <h3>{card.title}</h3>
-                <p>{card.desc}</p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why it matters */}
-      <section className="section" id="impact">
-        <div className="container">
-          <FadeUp>
-            <p className="section-label">03 — Why it matters</p>
-          </FadeUp>
-          <div className="impact-grid">
-            {impactCards.map((card, i) => (
-              <motion.article
-                key={card.label}
-                className="impact-card"
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: 'easeOut' }}
-              >
-                <span className="impact-label">{card.label}</span>
-                <p>{card.desc}</p>
-              </motion.article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -554,7 +253,8 @@ export default function HomeClient() {
               <p className="incubation-text">
                 Sealink Electric and Software is incubated under the <strong>DST NIDHI</strong>{' '}
                 cohort program of the Department of Science &amp; Technology, Government of India,
-                conducted at <strong>IIT Madras</strong>.
+                conducted at <strong>IIT Madras</strong> — a company-wide credential behind our
+                propulsion, controls, and intelligent systems work.
               </p>
             </div>
           </FadeUp>
@@ -566,11 +266,11 @@ export default function HomeClient() {
         <FadeUp className="container">
           <div className="cta-panel">
             <div>
-              <p className="section-label">04 — Get in touch</p>
-              <h2>Partner with Sealink</h2>
+              <p className="section-label">05 — Get in touch</p>
+              <h2>Build the next maritime system with us</h2>
               <p>
-                Interested in AFCOS pilots, fleet integrations, or custom maritime software?
-                Tell us about your project on our contact page.
+                Discuss propulsion development, marine electronics, intelligent maritime systems,
+                autonomy, software or technology partnerships with our engineering team.
               </p>
             </div>
             <div className="contact-actions">

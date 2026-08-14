@@ -1,61 +1,44 @@
 'use client'
-import { motion } from 'framer-motion'
+import FadeUp from '@/components/ui/FadeUp'
+import PageHero from '@/components/ui/PageHero'
 
-function FadeUp({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.55, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number], delay }}
-    >
-      {children}
-    </motion.div>
-  )
-}
+const enquiryTypes = [
+  'Defence & Strategic Technology',
+  'Marine Propulsion',
+  'Engine & Controls',
+  'Autonomous Systems',
+  'AFCOS / Fuel Optimisation',
+  'Commercial Marine',
+  'R&D Collaboration',
+  'Technology Partnership',
+]
 
 export default function ContactClient() {
   return (
     <main>
-      <section className="page-hero page-hero--contact">
-        <div className="contact-hero-decor" aria-hidden="true" />
-        <div className="container">
-          <motion.p
-            className="eyebrow"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-          >
-            Contact us
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          >
-            Get in <span>touch</span>
-          </motion.h1>
-          <motion.p
-            className="page-lead"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.32 }}
-          >
-            Fill in the form below and we will respond to your enquiry at{' '}
+      <PageHero
+        eyebrow="Contact us"
+        title="Build the Next Maritime"
+        titleAccent="System With Us"
+        lead={
+          <>
+            Discuss propulsion development, marine electronics, intelligent maritime systems,
+            autonomy, software or technology partnerships with our engineering team, or write to{' '}
             <a className="inline-link" href="mailto:info@sealinkelectric.com">
               info@sealinkelectric.com
-            </a>.
-          </motion.p>
-        </div>
-      </section>
+            </a>
+            .
+          </>
+        }
+        variant="contact"
+      />
 
       <section className="section">
         <div className="container contact-layout">
           <FadeUp delay={0.05}>
             <div className="contact-info card card-accent">
               <h2>Sealink Electric and Software Pvt Ltd</h2>
-              <p>Maritime AI · Fuel optimization · Digital ship systems</p>
+              <p>Marine Engineering &amp; Intelligent Systems</p>
               <ul className="contact-details">
                 <li>
                   <span className="detail-label">Email</span>
@@ -63,7 +46,7 @@ export default function ContactClient() {
                 </li>
                 <li>
                   <span className="detail-label">Enquiries</span>
-                  <span>AFCOS pilots · Fleet integrations · R&amp;D partnerships</span>
+                  <span>Propulsion · Controls · Electronics · Autonomy · AFCOS · R&amp;D · Partnerships</span>
                 </li>
               </ul>
             </div>
@@ -95,37 +78,59 @@ export default function ContactClient() {
                   <input type="text" id="name" name="name" required autoComplete="name" placeholder="Your name" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="email">
-                    Email <span aria-hidden="true">*</span>
-                  </label>
-                  <input type="email" id="email" name="email" required autoComplete="email" placeholder="you@company.com" />
+                  <label htmlFor="organisation">Organisation</label>
+                  <input type="text" id="organisation" name="organisation" autoComplete="organization" placeholder="Optional" />
                 </div>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" autoComplete="tel" placeholder="+91 …" />
+                  <label htmlFor="designation">Designation</label>
+                  <input type="text" id="designation" name="designation" placeholder="Optional" />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="company">Company / Organisation</label>
-                  <input type="text" id="company" name="company" autoComplete="organization" placeholder="Optional" />
+                  <label htmlFor="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" autoComplete="tel" placeholder="+91 …" />
                 </div>
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">
-                  Subject <span aria-hidden="true">*</span>
+                <label htmlFor="email">
+                  Email <span aria-hidden="true">*</span>
                 </label>
-                <input type="text" id="subject" name="subject" required placeholder="e.g. AFCOS pilot enquiry" />
+                <input type="email" id="email" name="email" required autoComplete="email" placeholder="you@company.com" />
+              </div>
+
+              <div className="form-group">
+                <label>
+                  Enquiry type <span aria-hidden="true">*</span>
+                </label>
+                <div className="enquiry-grid">
+                  {enquiryTypes.map((type) => (
+                    <label className="enquiry-chip" key={type}>
+                      <input type="radio" name="enquiry_type" value={type} required />
+                      <span>{type}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="stage">Project stage</label>
+                <input type="text" id="stage" name="project_stage" placeholder="e.g. Concept, Requirement definition, Pilot" />
               </div>
 
               <div className="form-group">
                 <label htmlFor="message">
-                  Message <span aria-hidden="true">*</span>
+                  Requirement / message <span aria-hidden="true">*</span>
                 </label>
                 <textarea id="message" name="message" rows={6} required placeholder="Tell us about your project or question…" />
               </div>
+
+              <p className="form-warning">
+                Please do not submit classified, sensitive or confidential information through
+                this form.
+              </p>
 
               <button className="btn btn-primary btn-full" type="submit">
                 Send message

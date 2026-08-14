@@ -23,16 +23,35 @@ const dmMono = DM_Mono({
   variable: '--font-mono',
 })
 
+const siteUrl = 'https://www.sealinkelectric.com'
+const defaultTitle = 'Sealink — Marine Engineering & Intelligent Systems'
+const defaultDescription =
+  'Sealink Electric and Software — indigenous marine propulsion, controls, electronics, software and intelligent maritime systems, engineered in India.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'Sealink — Maritime AI & Digital Systems',
+    default: defaultTitle,
     template: '%s — Sealink',
   },
-  description:
-    'Sealink Electric and Software — maritime AI, fuel optimization, and digital systems for defence and commercial fleets.',
+  description: defaultDescription,
   icons: {
     icon: '/assets/favicon-32.png',
     apple: '/assets/apple-touch-icon.png',
+  },
+  openGraph: {
+    type: 'website',
+    url: siteUrl,
+    siteName: 'Sealink',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ['/assets/hero-ship.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ['/assets/hero-ship.png'],
   },
 }
 

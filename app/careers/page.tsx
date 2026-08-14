@@ -4,7 +4,7 @@ import CareersClient from '@/components/pages/CareersClient'
 export const metadata: Metadata = {
   title: 'Careers',
   description:
-    'Join Sealink Electric and Software — build AI-powered maritime technology that ships actually use at sea. View open roles in ML, engineering, naval architecture, and business development.',
+    'Join Sealink Electric and Software — build maritime engineering technology across propulsion, controls, AI, and autonomous systems. View open roles in ML, engineering, naval architecture, and business development.',
 }
 
 export default function CareersPage() {

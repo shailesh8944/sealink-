@@ -1,28 +1,41 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import FadeUp from '@/components/ui/FadeUp'
+import PageHero from '@/components/ui/PageHero'
 
 const reasons = [
   {
     num: '01',
     title: 'Mission that matters',
-    desc: 'Every line of code we write directly cuts fuel burn and emissions on real ships. You see the impact — in voyage data, in saved tonnes of CO₂, in fleets that run cleaner.',
+    desc: 'Every line of code and every design decision goes into propulsion, controls, or software that ends up on real ships — not a slide deck.',
   },
   {
     num: '02',
-    title: 'Physics meets AI',
-    desc: "We don't do black-box ML. We combine naval architecture, two-stroke engine physics, and gradient-boosted models — rare work that challenges you across multiple disciplines.",
+    title: 'Physics meets engineering',
+    desc: "We don't do black-box work. We combine naval architecture, engine physics, controls engineering, and machine learning — rare work that challenges you across multiple disciplines.",
   },
   {
     num: '03',
     title: 'Indigenous by design',
-    desc: 'We are building sovereign maritime technology from India — for Indian defence fleets, commercial operators, and global export. Your work goes to sea, not to a slide deck.',
+    desc: 'We are building sovereign maritime technology from India — for Indian defence fleets, commercial operators, and global export.',
   },
   {
     num: '04',
     title: 'Early-stage ownership',
-    desc: 'We are a small, IIT Madras-rooted team. You will own problems end-to-end, make real decisions, and see your contributions shipped fast — no queue of 40 reviewers.',
+    desc: 'We are a small, IIT Madras-rooted team. You will own problems end-to-end, make real decisions, and see your contributions shipped fast.',
   },
+]
+
+const domains = [
+  'Marine Engineering',
+  'Propulsion',
+  'Controls & Electronics',
+  'AI / ML',
+  'Software',
+  'Autonomous Systems',
+  'Naval Architecture',
+  'Business Development',
 ]
 
 const openRoles = [
@@ -56,56 +69,17 @@ const openRoles = [
   },
 ]
 
-function FadeUp({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.55, ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number], delay }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
 export default function CareersClient() {
   return (
     <main>
-      {/* Hero */}
-      <section className="page-hero page-hero--ship">
-        <div className="page-hero-bg" aria-hidden="true">
-          <img src="/assets/hero-ship.png" alt="" width={1920} height={800} loading="lazy" decoding="async" />
-          <div className="page-hero-overlay" />
-        </div>
-        <div className="container">
-          <motion.p
-            className="eyebrow"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-          >
-            Careers
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number], delay: 0.2 }}
-          >
-            Build the future of <span>maritime AI</span>
-          </motion.h1>
-          <motion.p
-            className="page-lead"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.32 }}
-          >
-            Join a small, focused team turning naval physics and machine learning into
-            technology that ships actually use at sea.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Careers"
+        title="Build the Future of"
+        titleAccent="Maritime Engineering"
+        lead="Work across propulsion, controls, AI and autonomous maritime systems to build technology that operates beyond the laboratory."
+        variant="ship"
+        bgImage="/assets/hero-ship.png"
+      />
 
       {/* Why join us */}
       <section className="section section-dark">
@@ -130,6 +104,14 @@ export default function CareersClient() {
               </motion.article>
             ))}
           </div>
+          <FadeUp delay={0.1}>
+            <p className="section-label" style={{ marginTop: 40 }}>Career domains</p>
+            <div className="domain-tags">
+              {domains.map((d) => (
+                <span key={d}>{d}</span>
+              ))}
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -186,7 +168,7 @@ export default function CareersClient() {
               <p className="section-label">Don't see the right role?</p>
               <h2>Send a general application</h2>
               <p>
-                We are always interested in people who care deeply about maritime technology.
+                We are always interested in people who care deeply about maritime engineering.
                 Tell us what you do and why Sealink interests you — we read every message.
               </p>
             </div>
