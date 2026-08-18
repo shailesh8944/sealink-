@@ -1,4 +1,6 @@
 'use client'
+import { useState, type FormEvent } from 'react'
+import { useRouter } from 'next/navigation'
 import FadeUp from '@/components/ui/FadeUp'
 import PageHero from '@/components/ui/PageHero'
 
@@ -14,6 +16,41 @@ const enquiryTypes = [
 ]
 
 export default function ContactClient() {
+  const router = useRouter()
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setStatus('submitting')
+    setErrorMessage('')
+
+    const form = event.currentTarget
+    const data = Object.fromEntries(new FormData(form).entries())
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}))
+        throw new Error(body.error || 'Something went wrong. Please try again.')
+      }
+
+      router.push('/thank-you')
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong. Please try again, or email us directly at info@sealinkelectric.com.'
+      )
+    }
+  }
+
   return (
     <main>
       <PageHero
@@ -53,14 +90,7 @@ export default function ContactClient() {
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <form
-              className="contact-form card"
-              action="https://formsubmit.co/info@sealinkelectric.com"
-              method="POST"
-            >
-              <input type="hidden" name="_subject" value="New enquiry from Sealink website" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://www.sealinkelectric.com/thank-you/" />
+            <form className="contact-form card" onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="_honey"
@@ -132,8 +162,14 @@ export default function ContactClient() {
                 this form.
               </p>
 
-              <button className="btn btn-primary btn-full" type="submit">
-                Send message
+              {status === 'error' && (
+                <p className="form-warning" role="alert">
+                  {errorMessage}
+                </p>
+              )}
+
+              <button className="btn btn-primary btn-full" type="submit" disabled={status === 'submitting'}>
+                {status === 'submitting' ? 'Sending…' : 'Send message'}
               </button>
               <p className="form-note">By submitting, you agree that we may contact you regarding your enquiry.</p>
             </form>
