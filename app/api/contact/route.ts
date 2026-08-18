@@ -1,8 +1,11 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? 'info@sealinkelectric.com'
-const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL ?? 'onboarding@resend.dev'
+const SMTP_HOST = process.env.SMTP_HOST ?? 'smtp.zoho.com'
+const SMTP_PORT = Number(process.env.SMTP_PORT ?? 465)
+const SMTP_USER = process.env.SMTP_USER
+const SMTP_PASS = process.env.SMTP_PASS
 
 export async function POST(request: Request) {
   let data: Record<string, unknown>
@@ -28,6 +31,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
   }
 
+  if (!SMTP_USER || !SMTP_PASS) {
+    console.error('Contact form: SMTP_USER/SMTP_PASS not configured', { name, email, enquiry_type })
+    return NextResponse.json({ error: 'Server email not configured' }, { status: 500 })
+  }
+
   const rows = [
     ['Name', name],
     ['Organisation', organisation],
@@ -42,30 +50,25 @@ export async function POST(request: Request) {
     .map(([label, value]) => `<tr><td style="padding:4px 12px 4px 0;font-weight:600">${label}</td><td style="padding:4px 0">${value}</td></tr>`)
     .join('')
 
-  if (!process.env.RESEND_API_KEY) {
-    console.error('Contact form: RESEND_API_KEY not configured', { name, email, enquiry_type })
-    return NextResponse.json({ error: 'Server email not configured' }, { status: 500 })
-  }
-
-  const resend = new Resend(process.env.RESEND_API_KEY)
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: SMTP_PORT,
+    secure: SMTP_PORT === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  })
 
   try {
-    const result = await resend.emails.send({
-      from: `Sealink Website <${FROM_EMAIL}>`,
+    await transporter.sendMail({
+      from: `Sealink Website <${SMTP_USER}>`,
       to: TO_EMAIL,
       replyTo: email,
       subject: `New enquiry from Sealink website: ${enquiry_type}`,
       html: `<table>${rows}</table>`,
     })
 
-    if (result.error) {
-      console.error('Contact form: Resend send failed', result.error, { name, email, enquiry_type })
-      return NextResponse.json({ error: 'Failed to send message' }, { status: 502 })
-    }
-
     return NextResponse.json({ ok: true })
   } catch (error) {
-    console.error('Contact form: unexpected error', error, { name, email, enquiry_type })
-    return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
+    console.error('Contact form: SMTP send failed', error, { name, email, enquiry_type })
+    return NextResponse.json({ error: 'Failed to send message' }, { status: 502 })
   }
 }
