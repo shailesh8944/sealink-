@@ -1,8 +1,9 @@
 'use client'
 import { useState, type FormEvent } from 'react'
-import { useRouter } from 'next/navigation'
 import FadeUp from '@/components/ui/FadeUp'
 import PageHero from '@/components/ui/PageHero'
+
+const WEB3FORMS_ACCESS_KEY = '21a8fced-a698-4fbe-9e5a-fe103f0bc4f3'
 
 const enquiryTypes = [
   'Defence & Strategic Technology',
@@ -16,32 +17,46 @@ const enquiryTypes = [
 ]
 
 export default function ContactClient() {
-  const router = useRouter()
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    // Honeypot: bots fill hidden field, humans don't. Pretend success, send nothing.
+    if (formData.get('_honey')) {
+      setStatus('success')
+      form.reset()
+      return
+    }
+
     setStatus('submitting')
     setErrorMessage('')
 
-    const form = event.currentTarget
-    const data = Object.fromEntries(new FormData(form).entries())
+    const data = Object.fromEntries(formData.entries())
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify(data),
       })
 
-      if (!response.ok) {
-        const body = await response.json().catch(() => ({}))
-        throw new Error(body.error || 'Something went wrong. Please try again.')
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || `Web3Forms request failed with status ${response.status}`)
       }
 
-      router.push('/thank-you')
+      setStatus('success')
+      form.reset()
     } catch (error) {
+      console.error('Contact form: Web3Forms submission failed', error)
       setStatus('error')
       setErrorMessage(
         error instanceof Error
@@ -91,6 +106,9 @@ export default function ContactClient() {
 
           <FadeUp delay={0.1}>
             <form className="contact-form card" onSubmit={handleSubmit}>
+              <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+              <input type="hidden" name="subject" value="New enquiry from Sealink website" />
+              <input type="hidden" name="from_name" value="Sealink Website" />
               <input
                 type="text"
                 name="_honey"
@@ -165,6 +183,12 @@ export default function ContactClient() {
               {status === 'error' && (
                 <p className="form-warning" role="alert">
                   {errorMessage}
+                </p>
+              )}
+
+              {status === 'success' && (
+                <p className="form-success" role="status">
+                  Thank you — your enquiry has been sent. Our team will get back to you shortly.
                 </p>
               )}
 
