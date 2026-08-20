@@ -11,6 +11,7 @@ export default function TechnologyDetailClient({
   titleAccent,
   lead,
   overview,
+  image,
   architecture,
   concepts,
   tags,
@@ -21,6 +22,7 @@ export default function TechnologyDetailClient({
   titleAccent?: string
   lead: string
   overview: string[]
+  image?: { src: string; alt: string; caption: string; contain?: boolean }
   architecture: string[]
   concepts: { title: string; desc: string }[]
   tags: string[]
@@ -39,6 +41,17 @@ export default function TechnologyDetailClient({
               </p>
             ))}
           </FadeUp>
+
+          {image && (
+            <FadeUp delay={0.04}>
+              <figure className={`ship-showcase${image.contain ? ' ship-showcase--contain' : ''}`}>
+                <img src={image.src} alt={image.alt} />
+                <figcaption className="ship-showcase-caption">
+                  <span>{image.caption}</span>
+                </figcaption>
+              </figure>
+            </FadeUp>
+          )}
 
           <FadeUp delay={0.06}>
             <p className="section-label" style={{ marginTop: 8 }}>

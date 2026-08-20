@@ -54,6 +54,12 @@ export default function Footer() {
           <div className="footer-legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms</Link>
+            <img
+              src="https://visitor-badge.laobi.icu/badge?page_id=sealink-electric.visits"
+              alt="Visitor count"
+              height={20}
+              style={{ verticalAlign: 'middle' }}
+            />
           </div>
         </div>
       </div>

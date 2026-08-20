@@ -17,6 +17,12 @@ export default function Page() {
       overview={[
         'Sealink is developing indigenous propulsion technologies for compact marine platforms, with emphasis on efficiency, reliability, maintainability, controllability and integration with modern vessel systems.',
       ]}
+      image={{
+        src: '/assets/hybrid-propulsion.png',
+        alt: 'Sealink hybrid propulsion architecture — diesel engines, electric motors, battery pack, DC bus and hotel load integration',
+        caption: 'Hybrid propulsion architecture — dual diesel/electric drivetrain with battery and DC bus integration',
+        contain: true,
+      }}
       architecture={['Engine', 'ECU', 'Propeller', 'Propulsion Control', 'Vessel', 'Intelligence']}
       domainGroups={[
         {

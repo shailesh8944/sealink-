@@ -18,6 +18,7 @@ export default function CapabilityDetailClient({
   lead,
   stage,
   overview,
+  image,
   architecture,
   domainGroups,
   lifecycle,
@@ -28,6 +29,7 @@ export default function CapabilityDetailClient({
   lead: string
   stage: DevStage
   overview: string[]
+  image?: { src: string; alt: string; caption: string; contain?: boolean }
   architecture: string[]
   domainGroups: DomainGroup[]
   lifecycle: string[]
@@ -49,6 +51,17 @@ export default function CapabilityDetailClient({
               </p>
             ))}
           </FadeUp>
+
+          {image && (
+            <FadeUp delay={0.04}>
+              <figure className={`ship-showcase${image.contain ? ' ship-showcase--contain' : ''}`}>
+                <img src={image.src} alt={image.alt} />
+                <figcaption className="ship-showcase-caption">
+                  <span>{image.caption}</span>
+                </figcaption>
+              </figure>
+            </FadeUp>
+          )}
 
           <FadeUp delay={0.06}>
             <p className="section-label" style={{ marginTop: 32 }}>
