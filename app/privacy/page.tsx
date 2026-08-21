@@ -1,8 +1,8 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for Sealink Electric and Software Pvt Ltd.',
+  description: 'Privacy policy for Sea Link Electrical and Software Pvt. Ltd.',
 }
 
 export default function PrivacyPage() {
@@ -11,7 +11,7 @@ export default function PrivacyPage() {
       <div className="container thank-you-panel card">
         <h1 style={{ fontSize: 32 }}>Privacy Policy</h1>
         <p>
-          Sealink Electric and Software Pvt Ltd collects only the information you submit through
+          Sea Link Electrical and Software Pvt. Ltd collects only the information you submit through
           our contact form — name, organisation, designation, email, phone, enquiry type, and
           message — to respond to your enquiry. We do not sell or share this information with
           third parties.

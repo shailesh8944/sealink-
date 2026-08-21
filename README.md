@@ -1,6 +1,6 @@
-# Sealink — Company Website
+﻿# Sealink — Company Website
 
-Static company website for **Sealink Electric and Software Pvt Ltd**.
+Static company website for **Sea Link Electrical and Software Pvt. Ltd**.
 
 ## Live site
 

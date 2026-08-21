@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
@@ -20,7 +20,7 @@ export default function AboutClient() {
         eyebrow="About us"
         title="Who we"
         titleAccent="are"
-        lead="Sealink Electric and Software Pvt Ltd is an Indian marine technology company developing propulsion, control, electronics, software and intelligent maritime systems."
+        lead="Sea Link Electrical and Software Pvt. Ltd is an Indian marine technology company developing propulsion, control, electronics, software and intelligent maritime systems."
         variant="ship"
         bgImage="/assets/vpo-spot.jpg"
       />
@@ -54,7 +54,7 @@ export default function AboutClient() {
                 </article>
                 <article className="card">
                   <h3>Company</h3>
-                  <p className="card-meta">Sealink Electric and Software Pvt Ltd</p>
+                  <p className="card-meta">Sea Link Electrical and Software Pvt. Ltd</p>
                   <p className="card-meta" style={{ marginTop: 8 }}>Designed and Developed by IIT Madras student lead Team</p>
                 </article>
               </div>
@@ -97,7 +97,7 @@ export default function AboutClient() {
                 <img src="/assets/dst-nidhi-logo.png" alt="DST NIDHI — Start-to-Scale Startup Support" width={203} height={72} loading="lazy" decoding="async" />
               </div>
               <p className="incubation-text">
-                Sealink Electric and Software is incubated under the <strong>DST NIDHI</strong>{' '}
+                Sea Link Electrical and Software is incubated under the <strong>DST NIDHI</strong>{' '}
                 cohort program of the Department of Science &amp; Technology, Government of India,
                 conducted at <strong>IIT Madras</strong>.
               </p>

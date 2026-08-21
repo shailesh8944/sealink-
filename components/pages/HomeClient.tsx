@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
@@ -56,7 +56,7 @@ export default function HomeClient() {
           animate="visible"
         >
           <motion.p className="eyebrow" variants={heroItem}>
-            Sealink Electric and Software Pvt Ltd
+            Sea Link Electrical and Software Pvt. Ltd
           </motion.p>
           <motion.h1 variants={heroItem}>
             Indigenous marine propulsion{' '}
@@ -251,7 +251,7 @@ export default function HomeClient() {
                 />
               </div>
               <p className="incubation-text">
-                Sealink Electric and Software is incubated under the <strong>DST NIDHI</strong>{' '}
+                Sea Link Electrical and Software is incubated under the <strong>DST NIDHI</strong>{' '}
                 cohort program of the Department of Science &amp; Technology, Government of India,
                 conducted at <strong>IIT Madras</strong> — a company-wide credential behind our
                 propulsion, controls, and intelligent systems work.

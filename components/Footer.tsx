@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom footer-inner">
           <p className="footer-meta">
-            © {year} Sealink Electric and Software Pvt Ltd. All rights reserved. ·{' '}
+            © {year} Sea Link Electrical and Software Pvt. Ltd. All rights reserved. ·{' '}
             <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
           </p>
           <div className="footer-legal">

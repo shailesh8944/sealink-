@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState, type FormEvent } from 'react'
 import FadeUp from '@/components/ui/FadeUp'
 import PageHero from '@/components/ui/PageHero'
@@ -89,7 +89,7 @@ export default function ContactClient() {
         <div className="container contact-layout">
           <FadeUp delay={0.05}>
             <div className="contact-info card card-accent">
-              <h2>Sealink Electric and Software Pvt Ltd</h2>
+              <h2>Sea Link Electrical and Software Pvt. Ltd</h2>
               <p>Marine Engineering &amp; Intelligent Systems</p>
               <ul className="contact-details">
                 <li>

@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next'
+﻿import type { Metadata, Viewport } from 'next'
 import { Bebas_Neue, DM_Sans, DM_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
@@ -26,7 +26,7 @@ const dmMono = DM_Mono({
 const siteUrl = 'https://www.sealinkelectric.com'
 const defaultTitle = 'Sealink — Marine Engineering & Intelligent Systems'
 const defaultDescription =
-  'Sealink Electric and Software — indigenous marine propulsion, controls, electronics, software and intelligent maritime systems, engineered in India.'
+  'Sea Link Electrical and Software — indigenous marine propulsion, controls, electronics, software and intelligent maritime systems, engineered in India.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
