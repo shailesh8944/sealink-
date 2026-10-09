@@ -1242,10 +1242,13 @@ h2 {
 }
 
 .publication-item {
-  padding: 24px;
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  background: var(--glass-bg);
+  padding: 28px 32px;
+  border-left: 3px solid var(--teal-hero);
+  border-radius: 0 8px 8px 0;
+  background: rgba(6,15,30,0.6);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .publication-venue {
@@ -1255,14 +1258,15 @@ h2 {
   color: var(--teal-hero);
   text-transform: uppercase;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .publication-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--dark-text);
+  font-size: 18px;
+  font-weight: 700;
+  color: #e8f0f8;
   margin: 0 0 12px;
+  line-height: 1.4;
 }
 
 .publication-link {

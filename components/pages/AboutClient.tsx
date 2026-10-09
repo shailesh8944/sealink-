@@ -184,10 +184,10 @@ export default function AboutClient() {
               <li className="publication-item">
                 <span className="publication-venue">38th National Marine Convention · Institute of Engineers (India) · Chennai · 11–12 September</span>
                 <p className="publication-title">AFCOS: An Adaptive Fuel and Course Optimisation System for Marine Vessels using Physics-Informed Machine Learning</p>
-                <p style={{ fontSize: 13, color: 'var(--dark-muted)', margin: '0 0 10px' }}>
+                <p style={{ fontSize: 13, color: '#a8c0d8', margin: '0 0 6px' }}>
                   Shailesh Yadav, Vinay Kr. Tripathi, Sagar Yadav
                 </p>
-                <p style={{ fontSize: 13, color: 'var(--dark-muted)', margin: '0 0 10px' }}>
+                <p style={{ fontSize: 13, color: '#a8c0d8', margin: 0 }}>
                   Presented at Holiday Inn, Chennai
                 </p>
               </li>
