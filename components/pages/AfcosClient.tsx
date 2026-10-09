@@ -43,7 +43,7 @@ export default function AfcosClient() {
         title="AFCOS"
         lead="Physics-informed voyage and fuel optimisation for real-world marine operations — deployed at sea aboard MT TRF Kirkenes."
         variant="ship"
-        bgImage="/assets/afcos-voyage-planning.jpg"
+        bgImage="/assets/afcos-login-screen.png"
       >
         <div className="hero-actions" style={{ marginTop: 8 }}>
           <StatusPill stage="Deployed at Sea" />
