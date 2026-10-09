@@ -1,0 +1,22 @@
+Name        : Dr M. Ravichandran
+Role        : Advisor — Weather Routing, Weather Modelling & Voyage Optimisation
+
+Current Position:
+  - Professor, Department of Ocean Engineering, IIT Madras
+
+Former Position:
+  - Secretary, Ministry of Earth Sciences, Government of India
+    (one of India's highest scientific administrative positions overseeing
+     oceanography, meteorology, seismology, and polar research)
+
+Expertise:
+  - Ocean weather modelling and numerical forecasting
+  - Weather routing for maritime vessels
+  - Voyage optimisation using oceanographic and atmospheric data
+  - Ocean data systems and operational oceanography
+
+Role at Sealink:
+  - Advisor on the weather routing and weather modelling components of AFCOS
+    (Adaptive Fuel and Course Optimisation System)
+  - Guidance on integrating real-time ocean and atmospheric data into
+    voyage optimisation algorithms

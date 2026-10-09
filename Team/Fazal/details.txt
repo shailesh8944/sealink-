@@ -1,0 +1,10 @@
+Name        : Fazal
+Role        : Technical Head
+
+Education:
+  - B.Tech – Marine Engineering, IMU Navi Mumbai (2021)
+  - MS – Ocean Engineering, IIT Madras (ongoing)
+
+Responsibilities at Sealink:
+  - Technical development and engineering
+  - System design and implementation for maritime technology products

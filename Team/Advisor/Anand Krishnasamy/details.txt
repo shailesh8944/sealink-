@@ -1,0 +1,14 @@
+Name        : Prof. Anand Krishnasamy
+Role        : Advisor — Internal Combustion Engine Expert
+
+Affiliation : Department of Mechanical Engineering, IIT Madras
+              ICE Lab (Internal Combustion Engine Laboratory)
+
+Expertise:
+  - Internal combustion engines (petrol, diesel, and alternative fuels)
+  - Engine performance, emissions, and combustion diagnostics
+  - Fuel injection systems and combustion optimisation
+
+Role at Sealink:
+  - Technical advisor on engine performance and combustion-related aspects
+  - Advisory support for AFCOS engine-side optimisation and marine engine testbed work

@@ -1,0 +1,18 @@
+Name        : Shailesh Yadav
+Role        : Founder & CEO
+
+Education:
+  - B.Tech – Marine Engineering, IMU Kolkata (2023)
+  - MS – Ocean Engineering, IIT Madras (ongoing)
+
+Experience:
+  - 1+ year sailing experience as a Marine Engineer
+  - Class 4 Certificate of Competency, Indian Maritime University Kolkata
+  - Commercial sailing with Fleet Management Limited
+  - Co-Founder & CTO, Phorcys VX Marines Pvt Ltd (exited)
+  - Research on cooperative pursuit-evasion differential games for autonomous surface vessels
+
+Responsibilities at Sealink:
+  - Overall company strategy, product vision, and investor relations
+  - Leading AFCOS (Adaptive Fuel and Course Optimisation System) development
+  - Academic research under Professor Abhilash Somayajula, MAVLab, IIT Madras
