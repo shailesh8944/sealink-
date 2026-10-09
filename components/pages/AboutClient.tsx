@@ -4,6 +4,54 @@ import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
 import PageHero from '@/components/ui/PageHero'
 
+const coreTeam = [
+  {
+    name: 'Shailesh Yadav',
+    role: 'Founder & CEO',
+    photo: '/assets/team/shailesh-yadav.png',
+    bio: 'Marine Engineer (IMU Kolkata). MS Ocean Engineering, IIT Madras. 1+ year sailing, Class 4 CoC. Research on cooperative pursuit-evasion differential games for autonomous surface vessels.',
+  },
+  {
+    name: 'Sagar Yadav',
+    role: 'Founder & Chief Business Officer',
+    photo: '/assets/team/sagar-yadav.png',
+    bio: 'B.Tech Mechanical Engineering. MS Management Science, IIT Madras. 3+ years in Supply Chain Management. Leads business development, marketing, and customer outreach.',
+  },
+  {
+    name: 'Vinay Tripathi',
+    role: 'Founder & COO',
+    photo: '/assets/team/vinay-tripathi.png',
+    bio: 'Marine Engineer with 15+ years as an Operation Engineer aboard Dual Fuel Vessels. Deep domain expertise in marine operations and dual-fuel vessel systems.',
+  },
+  {
+    name: 'Fazal',
+    role: 'Technical Head',
+    photo: '/assets/team/fazal.png',
+    bio: 'B.Tech Marine Engineering (IMU Navi Mumbai). MS Ocean Engineering, IIT Madras. Leads technical development, system design, and implementation for maritime technology products.',
+  },
+]
+
+const advisors = [
+  {
+    name: 'Prof. Anand Krishnasamy',
+    role: 'Advisor — Internal Combustion Engine',
+    photo: '/assets/team/anand-krishnasamy.png',
+    bio: 'Department of Mechanical Engineering, IIT Madras. ICE Lab. Expert in engine performance, emissions, combustion diagnostics, and fuel injection systems.',
+  },
+  {
+    name: 'Dr M. Ravichandran',
+    role: 'Advisor — Weather Routing & Voyage Optimisation',
+    photo: '/assets/team/dr-ravichandran.png',
+    bio: 'Professor, Dept. of Ocean Engineering, IIT Madras. Former Secretary, Ministry of Earth Sciences, Govt. of India. Expert in ocean weather modelling and voyage optimisation.',
+  },
+  {
+    name: 'Venketachalan Iyer',
+    role: 'Business Advisor',
+    photo: '/assets/team/venketachalan-iyer.png',
+    bio: 'B.Tech IIT Kanpur, MBA IIM Ahmedabad. 35+ years industry experience in senior leadership at Tata Steel and other major industries. Strategic guidance on commercial growth and scaling.',
+  },
+]
+
 const beliefs = [
   { num: '01', title: 'Engineering before hype', desc: 'We build technology first — the story follows the engineering, not the other way round.' },
   { num: '02', title: 'Physics before black-box assumptions', desc: 'We combine first-principles naval architecture and thermodynamics with data-driven learning — not black-box guesses.' },
@@ -81,6 +129,61 @@ export default function AboutClient() {
                 <div className="feature-icon">{b.num}</div>
                 <h3>{b.title}</h3>
                 <p>{b.desc}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">Our team</p>
+            <h2 style={{ marginBottom: '2.5rem' }}>The people behind Sealink</h2>
+          </FadeUp>
+          <div className="team-grid">
+            {coreTeam.map((member, i) => (
+              <motion.article
+                key={member.name}
+                className="team-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+              >
+                <div className="team-photo-wrap">
+                  <img src={member.photo} alt={member.name} className="team-photo" loading="lazy" decoding="async" />
+                </div>
+                <div className="team-info">
+                  <h3>{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                  <p className="team-bio">{member.bio}</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+
+          <FadeUp style={{ marginTop: '3.5rem' }}>
+            <p className="section-label">Advisors</p>
+          </FadeUp>
+          <div className="team-grid">
+            {advisors.map((member, i) => (
+              <motion.article
+                key={member.name}
+                className="team-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+              >
+                <div className="team-photo-wrap">
+                  <img src={member.photo} alt={member.name} className="team-photo" loading="lazy" decoding="async" />
+                </div>
+                <div className="team-info">
+                  <h3>{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                  <p className="team-bio">{member.bio}</p>
+                </div>
               </motion.article>
             ))}
           </div>
