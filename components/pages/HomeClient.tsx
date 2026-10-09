@@ -290,7 +290,7 @@ export default function HomeClient() {
           </motion.p>
           <motion.div className="hero-actions" variants={heroItem}>
             <Link className="btn btn-primary" href="/contact">
-              Book a 20-minute demo
+              Book a demo
             </Link>
             <a className="btn btn-ghost" href="#how-it-works">
               See how it works

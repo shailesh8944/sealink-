@@ -394,7 +394,7 @@ export default function AfcosClient() {
         <FadeUp className="container">
           <div className="cta-panel">
             <div>
-              <h2>Book a 20-minute demo</h2>
+              <h2>Book a demo</h2>
               <p>See AFCOS running live. We will walk through voyage planning, Carbon Intensity Indicator (CII) compliance, and fuel savings for a vessel similar to yours.</p>
             </div>
             <div className="contact-actions">
