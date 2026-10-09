@@ -174,9 +174,8 @@ export default function AboutClient() {
           <FadeUp>
             <p className="section-label">Research &amp; publications</p>
             <h2>Published work</h2>
-            <p style={{ color: 'var(--dark-muted)', marginBottom: 32, maxWidth: 640 }}>
-              Sealink&apos;s technology is grounded in peer-reviewed research. The following papers
-              underpin the physics-informed models in AFCOS.
+            <p style={{ color: '#a8c0d8', marginBottom: 32, maxWidth: 640 }}>
+              The following papers underpin the physics-informed models in AFCOS.
             </p>
           </FadeUp>
           <FadeUp delay={0.06}>
