@@ -1,5 +1,5 @@
 ﻿'use client'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import FadeUp from '@/components/ui/FadeUp'
@@ -8,11 +8,11 @@ import ArchitectureFlow from '@/components/ui/ArchitectureFlow'
 
 const heroContainer = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0 } },
 }
 const heroItem = {
-  hidden: { opacity: 0, y: 36 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 }
 
 const coreCapabilities = [
@@ -26,27 +26,75 @@ const coreCapabilities = [
 
 export default function HomeClient() {
   const heroRef = useRef<HTMLElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
   })
   const shipY = useTransform(heroProgress, [0, 1], ['0%', '18%'])
 
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    // Respect save-data and reduced-motion — poster only
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData
+    if (reduced || saveData) {
+      video.removeAttribute('autoplay')
+      video.load()
+      return
+    }
+
+    // Set mobile source before load
+    const isMobile = window.innerWidth < 768
+    const mp4 = video.querySelector<HTMLSourceElement>('source[data-mobile]')
+    const webm = video.querySelector<HTMLSourceElement>('source[data-desktop-webm]')
+    const mp4desk = video.querySelector<HTMLSourceElement>('source[data-desktop-mp4]')
+    if (isMobile && mp4 && webm && mp4desk) {
+      webm.src = ''
+      mp4desk.src = ''
+      mp4.src = '/assets/hero-ocean-720.mp4'
+    } else if (mp4 && webm && mp4desk) {
+      mp4.src = ''
+      webm.src = '/assets/hero-ocean-1080.webm'
+      mp4desk.src = '/assets/hero-ocean-1080.mp4'
+    }
+    video.load()
+
+    // Pause when scrolled out, resume when back
+    const observer = new IntersectionObserver(
+      ([entry]) => { entry.isIntersecting ? video.play().catch(() => {}) : video.pause() },
+      { threshold: 0.1 }
+    )
+    observer.observe(video)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <main>
       {/* Hero */}
       <section className="hero" ref={heroRef}>
         <div className="hero-bg" aria-hidden="true">
-          <motion.img
-            className="hero-ship"
-            src="/assets/hero-ship.png"
-            alt=""
-            width={1920}
-            height={800}
-            fetchPriority="high"
-            decoding="async"
-            style={{ y: shipY }}
-          />
+          <motion.div className="hero-video-wrap" style={{ y: shipY }}>
+            <video
+              ref={videoRef}
+              className="hero-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/assets/hero-poster.jpg"
+              aria-hidden="true"
+            >
+              {/* sources set by JS before load */}
+              <source data-desktop-webm src="" type="video/webm" />
+              <source data-desktop-mp4 src="" type="video/mp4" />
+              <source data-mobile src="" type="video/mp4" />
+              <img src="/assets/hero-ship.png" alt="" width={1920} height={800} />
+            </video>
+          </motion.div>
           <div className="hero-overlay" />
         </div>
         <motion.div

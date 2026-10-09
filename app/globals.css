@@ -251,7 +251,7 @@ a {
 /* ─── Hero (always dark) ─── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   padding: calc(var(--header-h) + 48px) 0 80px;
@@ -276,12 +276,15 @@ a {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background:
-    url("/assets/hero-ship.png") 70% center / cover no-repeat,
-    var(--navy);
+  background: var(--navy);
 }
 
-.hero-ship {
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -289,6 +292,16 @@ a {
   max-width: none;
   object-fit: cover;
   object-position: 70% center;
+  z-index: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+  .hero-bg {
+    background: url("/assets/hero-poster.jpg") 70% center / cover no-repeat, var(--navy);
+  }
 }
 
 .hero-overlay {
@@ -296,7 +309,7 @@ a {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, var(--navy) 0%, rgba(6, 15, 30, 0.9) 30%, rgba(6, 15, 30, 0.45) 52%, rgba(6, 15, 30, 0.1) 68%, transparent 82%),
+    linear-gradient(90deg, rgba(5, 15, 30, 0.85) 0%, rgba(5, 15, 30, 0.35) 100%),
     linear-gradient(180deg, rgba(6, 15, 30, 0.35) 0%, transparent 25%, transparent 78%, rgba(6, 15, 30, 0.85) 100%);
   pointer-events: none;
 }
@@ -2142,7 +2155,11 @@ h2 {
     align-items: flex-start;
   }
 
-  .hero-ship {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-video {
     object-position: 75% center;
   }
 
