@@ -696,13 +696,13 @@ h2 {
   margin: 0 0 8px;
   font-size: 16px;
   font-weight: 500;
-  color: var(--white);
+  color: #e8f0f8;
 }
 
 .feature p {
   margin: 0;
   font-size: 14px;
-  color: var(--muted);
+  color: #a8c0d8;
 }
 
 /* ─── Team ─── */
