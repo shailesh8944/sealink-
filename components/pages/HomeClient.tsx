@@ -309,6 +309,31 @@ export default function HomeClient() {
         </div>
       </section>
 
+      {/* Partners */}
+      <section className="section" id="partners">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">Partners</p>
+            <h2>Industry Partners</h2>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <div className="partners-grid">
+              <div className="partner-card">
+                <img
+                  src="/assets/partners/abacus-marine.png"
+                  alt="Abacus Marine Services Pvt Ltd"
+                  width={180}
+                  height={180}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <p className="partner-name">Abacus Marine Services Pvt Ltd</p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section section-cta">
         <FadeUp className="container">
