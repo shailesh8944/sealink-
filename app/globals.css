@@ -1160,7 +1160,7 @@ h2 {
   font-family: var(--font-mono), "DM Mono", monospace;
   font-size: 11px;
   letter-spacing: 3px;
-  color: var(--teal);
+  color: #f0a500;
   flex-shrink: 0;
 }
 
@@ -1172,7 +1172,7 @@ h2 {
 }
 
 .roadmap-arrow {
-  color: var(--teal);
+  color: #f0a500;
   font-size: 14px;
 }
 
