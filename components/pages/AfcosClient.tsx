@@ -42,7 +42,8 @@ export default function AfcosClient() {
         eyebrow="AFCOS — Adaptive Fuel and Course Optimisation System"
         title="AFCOS"
         lead="Physics-informed voyage and fuel optimisation for real-world marine operations — deployed at sea aboard MT TRF Kirkenes."
-        variant="plain"
+        variant="ship"
+        bgImage="/assets/afcos-voyage-planning.jpg"
       >
         <div className="hero-actions" style={{ marginTop: 8 }}>
           <StatusPill stage="Deployed at Sea" />
