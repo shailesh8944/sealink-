@@ -71,16 +71,16 @@ const coreTeam = [
     cred: 'Marine Engineer, Class 4 CoC · MS Ocean Engineering, IIT Madras · 1+ year commercial sea experience',
   },
   {
-    name: 'Sagar Yadav',
-    role: 'Co-Founder & Chief Business Officer',
-    photo: '/assets/team/sagar-yadav.png',
-    cred: 'B.Tech Mechanical Engineering · MS Management Science, IIT Madras · 3+ years Supply Chain Management',
-  },
-  {
     name: 'Vinay Tripathi',
     role: 'Co-Founder & COO',
     photo: '/assets/team/vinay-tripathi.png',
     cred: 'Marine Engineer · 15+ years as Operation Engineer aboard Dual Fuel Vessels',
+  },
+  {
+    name: 'Sagar Yadav',
+    role: 'Co-Founder & Chief Business Officer',
+    photo: '/assets/team/sagar-yadav.png',
+    cred: 'B.Tech Mechanical Engineering · MS Management Science, IIT Madras · 3+ years Supply Chain Management',
   },
   {
     name: 'Fazal',
@@ -363,24 +363,11 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* ── Savings calculator ── */}
-      <section className="section" id="calculator">
-        <div className="container">
-          <FadeUp>
-            <p className="section-label">03 — Savings calculator</p>
-            <h2>Estimate your annual fuel saving</h2>
-          </FadeUp>
-          <FadeUp delay={0.06}>
-            <SavingsCalculator />
-          </FadeUp>
-        </div>
-      </section>
-
       {/* ── Team strip ── */}
       <section className="section section-dark" id="team">
         <div className="container">
           <FadeUp>
-            <p className="section-label">04 — Team</p>
+            <p className="section-label">03 — Team</p>
             <h2>Built by marine engineers who have been at sea</h2>
           </FadeUp>
           <div className="team-strip">
@@ -431,7 +418,7 @@ export default function HomeClient() {
       <section className="section section-dark" id="roadmap">
         <div className="container">
           <FadeUp>
-            <p className="section-label">05 — Roadmap</p>
+            <p className="section-label">04 — Roadmap</p>
             <h2>From fuel intelligence to indigenous marine propulsion</h2>
             <p style={{ color: 'var(--dark-muted)', maxWidth: 600, marginBottom: 32 }}>
               AFCOS is the first product. Our longer-term roadmap covers the full maritime
@@ -483,7 +470,7 @@ export default function HomeClient() {
       <section className="section section-dark" id="fuel-review">
         <div className="container">
           <FadeUp>
-            <p className="section-label">06 — Get started</p>
+            <p className="section-label">05 — Get started</p>
             <h2>Request a free fuel review of one vessel</h2>
             <p style={{ color: 'var(--dark-muted)', maxWidth: 560, marginBottom: 32 }}>
               Send us one vessel&apos;s voyage data — noon reports or a passage log — and we will
