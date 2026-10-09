@@ -7,6 +7,7 @@ export type DevStage =
   | 'Bench Tested'
   | 'Field Tested'
   | 'Deployed'
+  | 'Deployed at Sea'
   | 'Target'
 
 export default function StatusPill({ stage }: { stage: DevStage }) {
