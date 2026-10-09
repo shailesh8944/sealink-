@@ -286,7 +286,7 @@ export default function HomeClient() {
           <motion.p className="hero-lead" variants={heroItem}>
             AFCOS — Adaptive Fuel and Course Optimisation System — uses physics-informed voyage
             optimisation to reduce fuel burn and keep your fleet CII-compliant. Deployed at sea
-            aboard MT TRF Kirkenes.
+            Deployed at sea.
           </motion.p>
           <motion.div className="hero-actions" variants={heroItem}>
             <Link className="btn btn-primary" href="/contact">

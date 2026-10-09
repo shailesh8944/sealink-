@@ -88,7 +88,7 @@ export default function AboutClient() {
                 <p>
                   AFCOS (Adaptive Fuel and Course Optimisation System), our physics-informed voyage
                   and fuel optimisation platform, is the clearest evidence of this — deployed and
-                  running aboard MT TRF Kirkenes today.
+                  running at sea today.
                 </p>
               </div>
               <div className="about-cards">

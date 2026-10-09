@@ -41,7 +41,7 @@ export default function AfcosClient() {
       <PageHero
         eyebrow="AFCOS — Adaptive Fuel and Course Optimisation System"
         title="AFCOS"
-        lead="Physics-informed voyage and fuel optimisation for real-world marine operations — deployed at sea aboard MT TRF Kirkenes."
+        lead="Physics-informed voyage and fuel optimisation for real-world marine operations."
         variant="ship"
         bgImage="/assets/afcos-login-screen.png"
       >
@@ -81,12 +81,12 @@ export default function AfcosClient() {
       <section className="section section-dark">
         <div className="container">
           <FadeUp>
-            <p className="section-label">02 — Live system — MT TRF Kirkenes</p>
+            <p className="section-label">02 — Live system</p>
             <h2>AFCOS Running at Sea, Not in a Lab</h2>
             <p className="dashboard-sub" style={{ marginBottom: 28 }}>
-              Real screens from an active AFCOS deployment aboard MT TRF Kirkenes — voyage
-              planning, IMO CII compliance, seakeeping safety, and bunker planning in one
-              connected platform.
+              Real screens from an active AFCOS deployment — voyage planning, IMO Carbon Intensity
+              Indicator (CII) compliance, seakeeping safety, and bunker planning in one connected
+              platform.
             </p>
           </FadeUp>
           <div className="dashboard-grid">
@@ -251,8 +251,7 @@ export default function AfcosClient() {
                 <p style={{ margin: 0, color: 'var(--muted)', maxWidth: 640 }}>
                   AFCOS is engineered toward a <strong style={{ color: 'var(--white)' }}>15% target fuel savings</strong> —
                   a model-driven design goal, not a guaranteed or universally achieved result.
-                  Deployment evidence above reflects the system running live aboard MT TRF Kirkenes;
-                  savings figures will be published separately as measured, voyage-verified results
+                  Savings figures will be published separately as measured, voyage-verified results
                   become available.
                 </p>
               </div>

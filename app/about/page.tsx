@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'About Sea Link Electrical and Software Private Limited — founded by IIT Madras marine engineers, incubated at the Gopalakrishnan-Deshpande Centre. Developers of AFCOS, a physics-informed voyage and fuel optimisation system.',
   openGraph: {
     title: 'About Sea Link Electrical and Software Private Limited',
-    description: 'Founded by IIT Madras marine engineers and researchers. Developers of AFCOS fuel optimisation, deployed at sea aboard MT TRF Kirkenes.',
+    description: 'Founded by IIT Madras marine engineers and researchers. Developers of AFCOS, a physics-informed voyage and fuel optimisation system.',
     images: ['/assets/hero-poster.jpg'],
   },
 }

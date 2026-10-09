@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'AFCOS by Sealink — physics-informed voyage and fuel optimisation deployed at sea. Fuel savings up to 15% (under validation), Carbon Intensity Indicator (CII) compliance, seakeeping, and bunker planning.',
   openGraph: {
     title: 'AFCOS — Adaptive Fuel and Course Optimisation System',
-    description: 'Physics-informed voyage optimisation deployed aboard MT TRF Kirkenes. Cut fuel costs and protect your CII rating.',
+    description: 'Physics-informed voyage and fuel optimisation. Cut fuel costs and protect your CII rating.',
     images: ['/assets/afcos-voyage-planning.jpg'],
   },
 }
