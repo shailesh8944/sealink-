@@ -40,6 +40,7 @@ export default function Header() {
   const isCapabilities = pathname.startsWith('/capabilities')
   const isTechnology = pathname.startsWith('/technology')
   const isProducts = pathname.startsWith('/afcos')
+  const isInvestors = pathname.startsWith('/investors')
   const isAbout = pathname.startsWith('/about')
   const isCareers = pathname.startsWith('/careers')
   const isContact = pathname.startsWith('/contact')
@@ -126,7 +127,10 @@ export default function Header() {
           </div>
 
           <Link href="/afcos" className={isProducts ? 'active' : ''} onClick={close}>
-            Products
+            AFCOS
+          </Link>
+          <Link href="/investors" className={isInvestors ? 'active' : ''} onClick={close}>
+            Investors
           </Link>
           <Link href="/about" className={isAbout ? 'active' : ''} onClick={close}>
             About

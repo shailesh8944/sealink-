@@ -19,6 +19,12 @@ export default function Footer() {
               Chaubeypur, Varanasi,<br />
               Uttar Pradesh, India — 221104
             </p>
+            <p className="footer-address">
+              <strong>Operations:</strong><br />
+              Gopalakrishnan-Deshpande Centre for Innovation<br />
+              and Entrepreneurship, IIT Madras,<br />
+              Chennai, Tamil Nadu — 600036
+            </p>
             <a
               href="https://www.linkedin.com/company/sealink-electric-and-software-private-limited/"
               target="_blank"
@@ -66,7 +72,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom footer-inner">
           <p className="footer-meta">
-            © {year} Sea Link Electrical and Software Pvt. Ltd. All rights reserved. ·{' '}
+            © {year} Sealink Electric and Software Private Limited. All rights reserved. ·{' '}
             <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
           </p>
           <div className="footer-legal">

@@ -68,7 +68,7 @@ export default function AboutClient() {
         eyebrow="About us"
         title="Who we"
         titleAccent="are"
-        lead="Sea Link Electrical and Software Pvt. Ltd is an Indian marine technology company developing propulsion, control, electronics, software and intelligent maritime systems."
+        lead="Sealink Electric and Software Private Limited is an Indian maritime technology company developing fuel-optimisation software, marine propulsion, controls, electronics, and intelligent maritime systems."
         variant="ship"
         bgImage="/assets/vpo-spot.jpg"
       />
@@ -86,8 +86,8 @@ export default function AboutClient() {
                   intelligent systems.
                 </p>
                 <p>
-                  AFCOS, our AI-Based Fuel Consumption Optimization System, remains the clearest
-                  evidence of this approach turned into operational technology — deployed and
+                  AFCOS (Adaptive Fuel and Course Optimisation System), our physics-informed voyage
+                  and fuel optimisation platform, is the clearest evidence of this — deployed and
                   running aboard MT TRF Kirkenes today.
                 </p>
               </div>
@@ -102,8 +102,8 @@ export default function AboutClient() {
                 </article>
                 <article className="card">
                   <h3>Company</h3>
-                  <p className="card-meta">Sea Link Electrical and Software Pvt. Ltd</p>
-                  <p className="card-meta" style={{ marginTop: 8 }}>Designed and Developed by IIT Madras student lead Team</p>
+                  <p className="card-meta">Sealink Electric and Software Private Limited</p>
+                  <p className="card-meta" style={{ marginTop: 8 }}>Founded by IIT Madras marine engineers and researchers, incubated at the Gopalakrishnan-Deshpande Centre, IIT Madras.</p>
                 </article>
               </div>
             </div>
@@ -132,6 +132,67 @@ export default function AboutClient() {
               </motion.article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Founder story */}
+      <section className="section">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">Our story</p>
+            <h2>Built from the bridge</h2>
+            <div className="about-grid">
+              <div>
+                <p>
+                  Shailesh Yadav sailed as a marine engineer for over a year aboard commercial
+                  vessels. On every voyage, the same problem was visible: fuel was burned
+                  inefficiently because decisions on speed, routing, and engine load were made
+                  without good real-time data — and because the tools that existed used historical
+                  patterns rather than the ship&apos;s actual physics.
+                </p>
+                <p>
+                  At IIT Madras, researching autonomous surface vessels and ocean engineering, he
+                  saw how physics-informed models and modern machine learning could close that gap.
+                  With co-founders Sagar Yadav, Vinay Tripathi, and Fazal — all with deep maritime
+                  or engineering backgrounds — Sealink was founded to build AFCOS: a system that
+                  gives bridge officers and fleet managers the same quality of decision support that
+                  aviation has had for decades, built on real hull, propeller, and engine physics.
+                </p>
+                <p>
+                  The company is incubated at the Gopalakrishnan-Deshpande Centre, IIT Madras,
+                  under the Department of Science and Technology (DST) I-NCUBATE programme.
+                </p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Research and publications */}
+      <section className="section section-dark">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">Research &amp; publications</p>
+            <h2>Published work</h2>
+            <p style={{ color: 'var(--dark-muted)', marginBottom: 32, maxWidth: 640 }}>
+              Sealink&apos;s technology is grounded in peer-reviewed research. The following papers
+              underpin the physics-informed models in AFCOS.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.06}>
+            <ul className="publications-list">
+              <li className="publication-item">
+                <span className="publication-venue">[Conference name · Year]</span>
+                <p className="publication-title">[Title of first conference paper — to be added]</p>
+                <a href="#" className="publication-link">View paper ↗</a>
+              </li>
+              <li className="publication-item">
+                <span className="publication-venue">[Conference name · Year]</span>
+                <p className="publication-title">[Title of second conference paper — to be added]</p>
+                <a href="#" className="publication-link">View paper ↗</a>
+              </li>
+            </ul>
+          </FadeUp>
         </div>
       </section>
 
@@ -200,9 +261,11 @@ export default function AboutClient() {
                 <img src="/assets/dst-nidhi-logo.png" alt="DST NIDHI — Start-to-Scale Startup Support" width={203} height={72} loading="lazy" decoding="async" />
               </div>
               <p className="incubation-text">
-                Sea Link Electrical and Software is incubated under the <strong>DST NIDHI</strong>{' '}
-                cohort program of the Department of Science &amp; Technology, Government of India,
-                conducted at <strong>IIT Madras</strong>.
+                Sealink Electric and Software Private Limited is incubated under the{' '}
+                <strong>DST I-NCUBATE</strong> programme of the Department of Science &amp;
+                Technology (DST), Government of India, at the{' '}
+                <strong>Gopalakrishnan-Deshpande Centre for Innovation and Entrepreneurship,
+                IIT Madras</strong>.
               </p>
             </div>
           </FadeUp>

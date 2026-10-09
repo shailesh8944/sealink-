@@ -39,14 +39,14 @@ export default function AfcosClient() {
   return (
     <main>
       <PageHero
-        eyebrow="Products — Flagship"
+        eyebrow="AFCOS — Adaptive Fuel and Course Optimisation System"
         title="AFCOS"
-        lead="AI-Based Fuel Consumption Optimization System — physics-informed voyage and engine optimisation for real-world marine operations."
+        lead="Physics-informed voyage and fuel optimisation for real-world marine operations — deployed at sea aboard MT TRF Kirkenes."
         variant="plain"
       >
         <div className="hero-actions" style={{ marginTop: 8 }}>
-          <StatusPill stage="Field Tested" />
-          <span className="pill" style={{ marginLeft: 8 }}>15% target fuel savings</span>
+          <StatusPill stage="Deployed at Sea" />
+          <span className="pill" style={{ marginLeft: 8 }}>Target fuel savings: up to 15% (under validation)</span>
         </div>
       </PageHero>
 
@@ -261,15 +261,144 @@ export default function AfcosClient() {
         </div>
       </section>
 
+      {/* Installation and integration */}
+      <section className="section">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">05 — Installation &amp; integration</p>
+            <h2>Getting AFCOS aboard your vessel</h2>
+          </FadeUp>
+          <FadeUp delay={0.06}>
+            <div className="why-grid">
+              <div className="why-card">
+                <div className="why-card-num">01</div>
+                <h3>No new hardware required</h3>
+                <p>AFCOS runs on existing vessel computers or a rugged industrial PC supplied by our implementation partner. No modifications to engine or navigation hardware are needed.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">02</div>
+                <h3>Data inputs</h3>
+                <p>Noon reports, engine logs, Global Positioning System (GPS) position, fuel meter readings, and third-party weather feeds. Works with manual data entry if automated sensors are not available.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">03</div>
+                <h3>Setup time</h3>
+                <p>Typical installation and commissioning: 2–4 weeks, depending on vessel data availability and connectivity. Remote configuration is available for fleets outside Indian ports.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">04</div>
+                <h3>Works with older vessels</h3>
+                <p>AFCOS is designed for vessels without modern sensor arrays. Where data is sparse, the physics-informed model compensates — making it viable for bulk carriers, tankers, and coastal vessels of any age.</p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Data security and ownership */}
+      <section className="section section-dark">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">06 — Data security &amp; ownership</p>
+            <h2>Your data stays yours</h2>
+            <div className="why-grid" style={{ marginTop: 28 }}>
+              <div className="why-card">
+                <div className="why-card-num">01</div>
+                <h3>Data ownership</h3>
+                <p>All vessel operational data remains the sole property of the ship owner or manager. Sealink does not use customer data for training shared models without explicit written consent.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">02</div>
+                <h3>Storage and access</h3>
+                <p>Data is stored on encrypted servers hosted in India. Access is restricted to authorised personnel from the vessel operator and Sealink support team under a signed data-processing agreement.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">03</div>
+                <h3>No third-party sharing</h3>
+                <p>Operational data is never sold or shared with third parties, including flag states, port authorities, or commercial data brokers, without the owner&apos;s written instruction.</p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section">
+        <div className="container">
+          <FadeUp>
+            <div className="incubation-panel">
+              <div>
+                <p className="section-label" style={{ marginBottom: 8 }}>07 — Pricing</p>
+                <h3 style={{ margin: '0 0 8px', color: 'var(--white)' }}>Per-vessel annual subscription</h3>
+                <p style={{ margin: 0, color: 'var(--dark-muted)', maxWidth: 560 }}>
+                  AFCOS is priced on a per-vessel annual subscription basis. Pricing depends on
+                  vessel type, data availability, and integration scope.{' '}
+                  <Link href="/contact" className="inline-link">Contact us for a quote →</Link>
+                </p>
+              </div>
+              <span className="pill">Contact for pricing</span>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section section-dark">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">08 — Frequently asked questions</p>
+            <h2>Common questions</h2>
+          </FadeUp>
+          <FadeUp delay={0.06}>
+            <div className="faq-list">
+              {[
+                {
+                  q: 'How much crew training does AFCOS require?',
+                  a: 'AFCOS is designed for bridge officers with no software background. A typical onboarding session takes half a day. The interface uses familiar maritime concepts — speed, heading, fuel rate — and avoids technical jargon. Remote refresher training is available at any time.',
+                },
+                {
+                  q: 'Can the crew override any AFCOS recommendation?',
+                  a: 'Yes, always. AFCOS is a decision-support tool, not an autopilot. Every recommendation can be dismissed or ignored by the officer on watch. Safety overrides take immediate effect and the system recomputes around the crew\'s decision.',
+                },
+                {
+                  q: 'How accurate are the fuel saving predictions?',
+                  a: 'Predictions are built on vessel-specific hull resistance models, propeller curves, and engine thermodynamics — not generic fleet averages. Accuracy improves over the first few voyages as the model calibrates to actual sensor readings. Target savings are up to 15%; actual savings depend on route, weather, and operating profile.',
+                },
+                {
+                  q: 'What support is available when the vessel is at sea?',
+                  a: 'Email and satellite-call support is available during business hours (India Standard Time). Critical alerts and system faults are flagged to our operations team automatically. An offline mode allows full use of previously computed voyage plans if connectivity is lost.',
+                },
+                {
+                  q: 'What is the minimum contract length?',
+                  a: 'We offer a trial deployment period followed by an annual subscription. Multi-vessel and multi-year agreements are available at discounted rates. Contact us to discuss terms that suit your fleet.',
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="faq-item"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.4, delay: i * 0.07, ease: 'easeOut' }}
+                >
+                  <h3 className="faq-q">{item.q}</h3>
+                  <p className="faq-a">{item.a}</p>
+                </motion.div>
+              ))}
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       <section className="section section-cta">
         <FadeUp className="container">
           <div className="cta-panel">
             <div>
-              <h2>Discuss an AFCOS pilot</h2>
-              <p>Fleet integrations, pilots, and R&amp;D collaboration — talk to our team.</p>
+              <h2>Book a 20-minute demo</h2>
+              <p>See AFCOS running live. We will walk through voyage planning, Carbon Intensity Indicator (CII) compliance, and fuel savings for a vessel similar to yours.</p>
             </div>
             <div className="contact-actions">
-              <Link className="btn btn-primary" href="/contact">Contact us</Link>
+              <Link className="btn btn-primary" href="/contact">Book a demo</Link>
               <Link className="btn btn-ghost" href="/technology/physics-informed-ai">Physics-Informed AI</Link>
             </div>
           </div>
