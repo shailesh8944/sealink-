@@ -89,9 +89,9 @@ export default function HomeClient() {
               aria-hidden="true"
             >
               {/* sources set by JS before load */}
-              <source data-desktop-webm src="" type="video/webm" />
-              <source data-desktop-mp4 src="" type="video/mp4" />
-              <source data-mobile src="" type="video/mp4" />
+              <source data-desktop-webm type="video/webm" />
+              <source data-desktop-mp4 type="video/mp4" />
+              <source data-mobile type="video/mp4" />
               <img src="/assets/hero-ship.png" alt="" width={1920} height={800} />
             </video>
           </motion.div>
