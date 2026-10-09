@@ -2013,6 +2013,30 @@ h2 {
   line-height: 1.6;
 }
 
+.footer-address {
+  font-size: 12px;
+  color: var(--dark-muted);
+  max-width: 280px;
+  margin: 14px 0 0;
+  line-height: 1.7;
+}
+
+.footer-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-hero);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-linkedin:hover {
+  opacity: 0.75;
+}
+
 .footer-col h5 {
   font-family: var(--font-mono), "DM Mono", monospace;
   font-size: 10px;
