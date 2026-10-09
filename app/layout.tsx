@@ -26,7 +26,7 @@ const dmMono = DM_Mono({
 const siteUrl = 'https://www.sealinkelectric.com'
 const defaultTitle = 'Sealink — Fuel Optimisation & Intelligent Maritime Systems'
 const defaultDescription =
-  'Sealink Electric and Software Private Limited — physics-informed voyage and fuel optimisation (AFCOS), marine propulsion, controls, and intelligent maritime systems, engineered in India.'
+  'Sea Link Electrical and Software Private Limited — physics-informed voyage and fuel optimisation (AFCOS), marine propulsion, controls, and intelligent maritime systems, engineered in India.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

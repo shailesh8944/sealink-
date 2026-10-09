@@ -276,7 +276,7 @@ export default function HomeClient() {
           animate="visible"
         >
           <motion.p className="eyebrow" variants={heroItem}>
-            Sealink Electric and Software Private Limited
+            Sea Link Electrical and Software Private Limited
           </motion.p>
           <motion.h1 variants={heroItem}>
             Cut fuel costs and protect your{' '}

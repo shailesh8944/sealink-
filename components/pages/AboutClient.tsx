@@ -68,7 +68,7 @@ export default function AboutClient() {
         eyebrow="About us"
         title="Who we"
         titleAccent="are"
-        lead="Sealink Electric and Software Private Limited is an Indian maritime technology company developing fuel-optimisation software, marine propulsion, controls, electronics, and intelligent maritime systems."
+        lead="Sea Link Electrical and Software Private Limited is an Indian maritime technology company developing fuel-optimisation software, marine propulsion, controls, electronics, and intelligent maritime systems."
         variant="ship"
         bgImage="/assets/vpo-spot.jpg"
       />
@@ -102,7 +102,7 @@ export default function AboutClient() {
                 </article>
                 <article className="card">
                   <h3>Company</h3>
-                  <p className="card-meta">Sealink Electric and Software Private Limited</p>
+                  <p className="card-meta">Sea Link Electrical and Software Private Limited</p>
                   <p className="card-meta" style={{ marginTop: 8 }}>Founded by IIT Madras marine engineers and researchers, incubated at the Gopalakrishnan-Deshpande Centre, IIT Madras.</p>
                 </article>
               </div>
@@ -182,14 +182,14 @@ export default function AboutClient() {
           <FadeUp delay={0.06}>
             <ul className="publications-list">
               <li className="publication-item">
-                <span className="publication-venue">[Conference name · Year]</span>
-                <p className="publication-title">[Title of first conference paper — to be added]</p>
-                <a href="#" className="publication-link">View paper ↗</a>
-              </li>
-              <li className="publication-item">
-                <span className="publication-venue">[Conference name · Year]</span>
-                <p className="publication-title">[Title of second conference paper — to be added]</p>
-                <a href="#" className="publication-link">View paper ↗</a>
+                <span className="publication-venue">38th National Marine Convention · Institute of Engineers (India) · Chennai · 11–12 September</span>
+                <p className="publication-title">AFCOS: An Adaptive Fuel and Course Optimisation System for Marine Vessels using Physics-Informed Machine Learning</p>
+                <p style={{ fontSize: 13, color: 'var(--dark-muted)', margin: '0 0 10px' }}>
+                  Shailesh Yadav, Vinay Kr. Tripathi, Sagar Yadav
+                </p>
+                <p style={{ fontSize: 13, color: 'var(--dark-muted)', margin: '0 0 10px' }}>
+                  Presented at Holiday Inn, Chennai
+                </p>
               </li>
             </ul>
           </FadeUp>
@@ -261,7 +261,7 @@ export default function AboutClient() {
                 <img src="/assets/dst-nidhi-logo.png" alt="DST NIDHI — Start-to-Scale Startup Support" width={203} height={72} loading="lazy" decoding="async" />
               </div>
               <p className="incubation-text">
-                Sealink Electric and Software Private Limited is incubated under the{' '}
+                Sea Link Electrical and Software Private Limited is incubated under the{' '}
                 <strong>DST I-NCUBATE</strong> programme of the Department of Science &amp;
                 Technology (DST), Government of India, at the{' '}
                 <strong>Gopalakrishnan-Deshpande Centre for Innovation and Entrepreneurship,

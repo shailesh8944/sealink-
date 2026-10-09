@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom footer-inner">
           <p className="footer-meta">
-            © {year} Sealink Electric and Software Private Limited. All rights reserved. ·{' '}
+            © {year} Sea Link Electrical and Software Private Limited. All rights reserved. ·{' '}
             <a href="mailto:info@sealinkelectric.com">info@sealinkelectric.com</a>
           </p>
           <div className="footer-legal">
