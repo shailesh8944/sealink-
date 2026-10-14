@@ -31,20 +31,6 @@ const coreTeam = [
   },
 ]
 
-const advisors = [
-  {
-    name: 'Dr M. Ravichandran',
-    role: 'Advisor — Weather Routing & Voyage Optimisation',
-    photo: '/assets/team/dr-ravichandran.png',
-    bio: 'Professor, Dept. of Ocean Engineering, IIT Madras. Former Secretary, Ministry of Earth Sciences, Govt. of India. Expert in ocean weather modelling and voyage optimisation.',
-  },
-  {
-    name: 'Venketachalan Iyer',
-    role: 'Business Advisor',
-    photo: '/assets/team/venketachalan-iyer.png',
-    bio: 'B.Tech IIT Kanpur, MBA IIM Ahmedabad. 35+ years industry experience in senior leadership at Tata Steel and other major industries. Strategic guidance on commercial growth and scaling.',
-  },
-]
 
 const beliefs = [
   { num: '01', title: 'Engineering before hype', desc: 'We build technology first — the story follows the engineering, not the other way round.' },
@@ -217,30 +203,6 @@ export default function AboutClient() {
             ))}
           </div>
 
-          <FadeUp style={{ marginTop: '3.5rem' }}>
-            <p className="section-label">Advisors</p>
-          </FadeUp>
-          <div className="team-grid">
-            {advisors.map((member, i) => (
-              <motion.article
-                key={member.name}
-                className="team-card"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
-              >
-                <div className="team-photo-wrap">
-                  <img src={member.photo} alt={member.name} className="team-photo" loading="lazy" decoding="async" />
-                </div>
-                <div className="team-info">
-                  <h3>{member.name}</h3>
-                  <p className="team-role">{member.role}</p>
-                  <p className="team-bio">{member.bio}</p>
-                </div>
-              </motion.article>
-            ))}
-          </div>
         </div>
       </section>
 
