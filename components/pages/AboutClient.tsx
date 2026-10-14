@@ -33,12 +33,6 @@ const coreTeam = [
 
 const advisors = [
   {
-    name: 'Prof. Anand Krishnasamy',
-    role: 'Advisor — Internal Combustion Engine',
-    photo: '/assets/team/anand-krishnasamy.png',
-    bio: 'Department of Mechanical Engineering, IIT Madras. ICE Lab. Expert in engine performance, emissions, combustion diagnostics, and fuel injection systems.',
-  },
-  {
     name: 'Dr M. Ravichandran',
     role: 'Advisor — Weather Routing & Voyage Optimisation',
     photo: '/assets/team/dr-ravichandran.png',
