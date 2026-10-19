@@ -41,13 +41,12 @@ export default function AfcosClient() {
       <PageHero
         eyebrow="AFCOS — Adaptive Fuel and Course Optimisation System"
         title="AFCOS"
-        lead="Physics-informed voyage and fuel optimisation for real-world marine operations."
+        lead="Physics-informed voyage and fuel optimisation for real-world marine operations. Validated on noon-report data from two tankers: 3.3–3.6% mean absolute percentage error in fuel prediction."
         variant="ship"
         bgImage="/assets/afcos-login-screen.png"
       >
         <div className="hero-actions" style={{ marginTop: 8 }}>
-          <StatusPill stage="Deployed at Sea" />
-          <span className="pill" style={{ marginLeft: 8 }}>Target fuel savings: up to 15% (under validation)</span>
+          <StatusPill stage="Validated on vessel data" />
         </div>
       </PageHero>
 
@@ -81,12 +80,12 @@ export default function AfcosClient() {
       <section className="section section-dark">
         <div className="container">
           <FadeUp>
-            <p className="section-label">02 — Live system</p>
-            <h2>AFCOS Running at Sea, Not in a Lab</h2>
+            <p className="section-label">02 — Inside AFCOS</p>
+            <h2>Inside AFCOS</h2>
             <p className="dashboard-sub" style={{ marginBottom: 28 }}>
-              Real screens from an active AFCOS deployment — voyage planning, IMO Carbon Intensity
-              Indicator (CII) compliance, seakeeping safety, and bunker planning in one connected
-              platform.
+              Product screens from the AFCOS Planning Station — voyage planning, IMO Carbon
+              Intensity Indicator (CII) compliance, seakeeping safety, and bunker planning in one
+              connected platform.
             </p>
           </FadeUp>
           <div className="dashboard-grid">
@@ -97,10 +96,10 @@ export default function AfcosClient() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }}
             >
-              <img src="/assets/afcos-voyage-planning.jpg" alt="AFCOS Planning Station showing an ECDIS voyage plan, wave height along route, and leg-by-leg RPM schedule" width={1600} height={831} loading="lazy" decoding="async" />
+              <img src="/assets/afcos-voyage-planning.jpg" alt="AFCOS Planning Station showing a chart-based voyage plan, wave height along route, and leg-by-leg RPM schedule" width={1600} height={831} loading="lazy" decoding="async" />
               <figcaption className="dashboard-caption">
                 <strong>Voyage planning</strong>
-                <span>The Planning Station lays a full ECDIS-based passage plan over live weather, comparing candidate routes by fuel burn, duration, worst-leg wave height, and CII rating before a voyage is approved.</span>
+                <span>The Planning Station lays a chart-based passage plan over live weather, comparing candidate routes by fuel burn, duration, worst-leg wave height, and CII rating before a voyage is approved.</span>
               </figcaption>
             </motion.figure>
             <motion.figure
@@ -153,27 +152,17 @@ export default function AfcosClient() {
             <p className="section-label">03 — Physics-informed engine</p>
             <h2>Built on Physics, Not Black-Box Patterns</h2>
             <p className="product-intro">
-              AFCOS is built on a hybrid Digital Twin framework driven by Physics-Informed
-              Artificial Intelligence (PIAI). Hydrodynamic and thermodynamic principles are
-              embedded directly into the models, so predictions stay bounded by real hull,
-              propeller, and engine behaviour.
+              AFCOS uses a hybrid physics and machine-learning model: first-principles hull, wave,
+              engine and propeller models set the baseline, and a machine-learning layer (XGBoost)
+              corrects the remaining error. Hydrodynamic and thermodynamic principles are embedded
+              directly into the models, so predictions stay bounded by real physics.
             </p>
           </FadeUp>
           <FadeUp delay={0.06}>
             <ArchitectureFlow
-              stages={['Hull Resistance', 'Propeller Model', 'Engine Thermodynamics', 'Weather / Sea State', 'Physics-Informed AI', 'Fuel / Voyage / Engine Optimisation']}
+              stages={['Hull Resistance', 'Wave Added Resistance', 'Engine Model', 'Propeller Model', 'Machine-Learning Correction', 'Fuel / Speed Recommendation']}
             />
           </FadeUp>
-          <div className="physics-figure-grid">
-            <figure className="physics-figure">
-              <img src="/assets/afcos-digital-twin.png" alt="AFCOS digital twin — CFD hull modeling, engine thermodynamics, propeller simulation, and neural network optimization" width={960} height={540} loading="lazy" decoding="async" />
-              <figcaption>Integrated physics-informed AI — hull, engine, and propeller models fused in real time</figcaption>
-            </figure>
-            <figure className="physics-figure">
-              <img src="/assets/afcos-piai-framework.png" alt="PIAI framework — hull CFD analysis, 2-stroke engine and propeller modeling feeding a deep neural network optimization layer" width={960} height={540} loading="lazy" decoding="async" />
-              <figcaption>CFD hull analysis, propulsion system modeling, and DNN optimization layer</figcaption>
-            </figure>
-          </div>
           <FadeUp delay={0.08}>
             <div className="compare-table-wrap">
               <table className="compare-table">
@@ -272,8 +261,8 @@ export default function AfcosClient() {
             <div className="why-grid">
               <div className="why-card">
                 <div className="why-card-num">01</div>
-                <h3>No new hardware required</h3>
-                <p>AFCOS runs on existing vessel computers or a rugged industrial PC supplied by our implementation partner. No modifications to engine or navigation hardware are needed.</p>
+                <h3>Minimal hardware</h3>
+                <p>Runs on an existing onboard computer or our compact edge unit. No changes to engine or navigation equipment are needed.</p>
               </div>
               <div className="why-card">
                 <div className="why-card-num">02</div>
@@ -295,11 +284,83 @@ export default function AfcosClient() {
         </div>
       </section>
 
+      {/* Data Acquisition Box */}
+      <section className="section">
+        <div className="container">
+          <FadeUp>
+            <p className="section-label">06 — Data Acquisition Box</p>
+            <h2>One Box. Every Sensor. Zero Manual Reports.</h2>
+            <p className="product-intro">
+              Sealink&apos;s indigenously developed Data Acquisition Box (DABox) sits at the heart of AFCOS —
+              consolidating every onboard sensor into a single, unified data stream. No manual noon reports.
+              No transcription errors. No dependence on crew availability to log data.
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.04}>
+            <div style={{ margin: '28px auto 0', maxWidth: 800, borderRadius: 12, overflow: 'hidden', border: '1px solid #1e2530', background: '#0d0f14' }}>
+              <img
+                src="/assets/dabox-device.svg"
+                alt="Sealink DABox — Data Acquisition Box hardware unit showing front panel with DABox label, status LEDs, Ethernet, RS-485, NMEA, CAN Bus and GPS ports"
+                width={800}
+                height={480}
+                style={{ display: 'block', width: '100%', height: 'auto' }}
+              />
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.06}>
+            <div className="why-grid" style={{ marginTop: 28 }}>
+              <div className="why-card">
+                <div className="why-card-num">01</div>
+                <h3>Unified sensor fusion</h3>
+                <p>DABox aggregates data from GPS, fuel flow meters, engine sensors, anemometers, and draft gauges into one time-synced feed — eliminating the fragmented, siloed logs that make fleet analysis unreliable.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">02</div>
+                <h3>Automated noon reports</h3>
+                <p>Noon reports are generated automatically from live sensor data and transmitted to shore without any crew intervention. The reports conform to standard maritime formats — ready for charterers, managers, and regulators the moment they are due.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">03</div>
+                <h3>Real-time analytics</h3>
+                <p>DABox continuously feeds AFCOS&apos;s analytics engine, producing voyage performance summaries, fuel consumption trends, and anomaly alerts as the voyage unfolds — not days later when the data is cold.</p>
+              </div>
+              <div className="why-card">
+                <div className="why-card-num">04</div>
+                <h3>Built for every vessel</h3>
+                <p>Designed and manufactured in India at a fraction of the cost of imported equivalents. Simple enough to install on a fishing vessel. Robust enough for deep-sea commercial operations. No specialist integrator required.</p>
+              </div>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <div className="incubation-panel" style={{ marginTop: 32 }}>
+              <div>
+                <p className="section-label" style={{ marginBottom: 8 }}>Indigenously developed</p>
+                <p style={{ margin: 0, color: 'var(--muted)', maxWidth: 640 }}>
+                  DABox is designed, developed, and manufactured in India by the Sealink team —
+                  keeping costs low, lead times short, and support local. From coastal fishing fleets
+                  to deep-sea tankers, the same hardware adapts to every operational scale.
+                </p>
+              </div>
+              <span className="pill">Made in India</span>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.12}>
+            <div className="domain-tags" style={{ marginTop: 24 }}>
+              <span>Sensor Fusion</span>
+              <span>Auto Noon Reports</span>
+              <span>Zero Manual Entry</span>
+              <span>Fishing Vessel Ready</span>
+              <span>Indigenously Developed</span>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* Data security and ownership */}
       <section className="section section-dark">
         <div className="container">
           <FadeUp>
-            <p className="section-label">06 — Data security &amp; ownership</p>
+            <p className="section-label">07 — Data security &amp; ownership</p>
             <h2>Your data stays yours</h2>
             <div className="why-grid" style={{ marginTop: 28 }}>
               <div className="why-card">
@@ -328,7 +389,7 @@ export default function AfcosClient() {
           <FadeUp>
             <div className="incubation-panel">
               <div>
-                <p className="section-label" style={{ marginBottom: 8 }}>07 — Pricing</p>
+                <p className="section-label" style={{ marginBottom: 8 }}>08 — Pricing</p>
                 <h3 style={{ margin: '0 0 8px', color: 'var(--white)' }}>Per-vessel annual subscription</h3>
                 <p style={{ margin: 0, color: 'var(--dark-muted)', maxWidth: 560 }}>
                   AFCOS is priced on a per-vessel annual subscription basis. Pricing depends on
@@ -346,7 +407,7 @@ export default function AfcosClient() {
       <section className="section section-dark">
         <div className="container">
           <FadeUp>
-            <p className="section-label">08 — Frequently asked questions</p>
+            <p className="section-label">09 — Frequently asked questions</p>
             <h2>Common questions</h2>
           </FadeUp>
           <FadeUp delay={0.06}>
@@ -399,7 +460,7 @@ export default function AfcosClient() {
             </div>
             <div className="contact-actions">
               <Link className="btn btn-primary" href="/contact">Book a demo</Link>
-              <Link className="btn btn-ghost" href="/technology/physics-informed-ai">Physics-Informed AI</Link>
+              <Link className="btn btn-ghost" href="/technology/physics-informed-ai">Our technology</Link>
             </div>
           </div>
         </FadeUp>
