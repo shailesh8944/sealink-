@@ -7,27 +7,27 @@ import PageHero from '@/components/ui/PageHero'
 const coreTeam = [
   {
     name: 'Shailesh Yadav',
-    role: 'Founder & CEO',
+    role: 'Co-Founder & CEO',
     photo: '/assets/team/shailesh-yadav.png',
-    bio: 'Marine Engineer (IMU Kolkata). MS Ocean Engineering, IIT Madras. 1+ year sailing, Class 4 CoC. Research on cooperative pursuit-evasion differential games for autonomous surface vessels.',
-  },
-  {
-    name: 'Sagar Yadav',
-    role: 'Founder & Chief Business Officer',
-    photo: '/assets/team/sagar-yadav.png',
-    bio: 'B.Tech Mechanical Engineering. MS Management Science, IIT Madras. 3+ years in Supply Chain Management. Leads business development, marketing, and customer outreach.',
+    bio: 'Marine Engineer (Indian Maritime University, Kolkata). Class 4 Certificate of Competency; sea service with Fleet Management Limited. MS Ocean Engineering, IIT Madras. Research on autonomous surface vessels; two conference papers.',
   },
   {
     name: 'Vinay Tripathi',
-    role: 'Founder & COO',
+    role: 'Co-Founder & COO',
     photo: '/assets/team/vinay-tripathi.png',
-    bio: 'Marine Engineer with 15+ years as an Operation Engineer aboard Dual Fuel Vessels. Deep domain expertise in marine operations and dual-fuel vessel systems.',
+    bio: 'Marine engineer with 15+ years at sea on dual-fuel vessels. Brings hands-on operating experience to every product decision.',
+  },
+  {
+    name: 'Sagar Yadav',
+    role: 'Co-Founder & Chief Business Officer',
+    photo: '/assets/team/sagar-yadav.png',
+    bio: 'B.Tech Mechanical Engineering. MS Management Science, IIT Madras. Three years in supply chain management. Leads customers, partnerships and business development.',
   },
   {
     name: 'Fazal',
     role: 'Technical Head',
     photo: '/assets/team/fazal.png',
-    bio: 'B.Tech Marine Engineering (IMU Navi Mumbai). MS Ocean Engineering, IIT Madras. Leads technical development, system design, and implementation for maritime technology products.',
+    bio: 'B.Tech Marine Engineering (Indian Maritime University, Navi Mumbai). MS Ocean Engineering, IIT Madras. Leads system design and implementation.',
   },
 ]
 
@@ -36,9 +36,6 @@ const beliefs = [
   { num: '01', title: 'Engineering before hype', desc: 'We build technology first — the story follows the engineering, not the other way round.' },
   { num: '02', title: 'Physics before black-box assumptions', desc: 'We combine first-principles naval architecture and thermodynamics with data-driven learning — not black-box guesses.' },
   { num: '03', title: 'Crew and operator safety first', desc: 'Recommendations must be explainable, override-safe, and built for real bridge and operational workflows.' },
-  { num: '04', title: 'Indigenous capability', desc: 'Built in India for Indian and global platforms — sovereign technology for critical maritime operations.' },
-  { num: '05', title: 'Validation in the real world', desc: 'Models and prototypes are tested against real operational data and real sea conditions, not only simulations.' },
-  { num: '06', title: 'Hardware + software integration', desc: 'Propulsion, controls, electronics, and software are engineered together, not as separate afterthoughts.' },
 ]
 
 export default function AboutClient() {
@@ -67,8 +64,8 @@ export default function AboutClient() {
                 </p>
                 <p>
                   AFCOS (Adaptive Fuel and Course Optimisation System), our physics-informed voyage
-                  and fuel optimisation platform, is the clearest evidence of this — deployed and
-                  running at sea today.
+                  and fuel optimisation platform, has been validated on real vessel data from two
+                  tankers, achieving 3.3–3.6% mean absolute percentage error in fuel prediction.
                 </p>
               </div>
               <div className="about-cards">
@@ -83,7 +80,7 @@ export default function AboutClient() {
                 <article className="card">
                   <h3>Company</h3>
                   <p className="card-meta">Sea Link Electrical and Software Private Limited</p>
-                  <p className="card-meta" style={{ marginTop: 8 }}>Founded by IIT Madras marine engineers and researchers, incubated at the Gopalakrishnan-Deshpande Centre, IIT Madras.</p>
+                  <p className="card-meta" style={{ marginTop: 8 }}>Founded at IIT Madras, incubated at the Gopalakrishnan-Deshpande Centre, IIT Madras.</p>
                 </article>
               </div>
             </div>
@@ -124,23 +121,25 @@ export default function AboutClient() {
             <div className="about-grid">
               <div>
                 <p>
-                  Shailesh Yadav sailed as a marine engineer for over a year aboard commercial
-                  vessels. On every voyage, the same problem was visible: fuel was burned
-                  inefficiently because decisions on speed, routing, and engine load were made
-                  without good real-time data — and because the tools that existed used historical
-                  patterns rather than the ship&apos;s actual physics.
+                  Sealink was founded by marine engineers and researchers who sailed on commercial
+                  vessels and saw first-hand how much fuel and engine life depended on information
+                  the crew did not have — speed and engine-load decisions made on noon reports and
+                  experience alone, without real-time data or physics-backed tools.
                 </p>
                 <p>
-                  At IIT Madras, researching autonomous surface vessels and ocean engineering, he
-                  saw how physics-informed models and modern machine learning could close that gap.
-                  With co-founders Sagar Yadav, Vinay Tripathi, and Fazal — all with deep maritime
-                  or engineering backgrounds — Sealink was founded to build AFCOS: a system that
-                  gives bridge officers and fleet managers the same quality of decision support that
-                  aviation has had for decades, built on real hull, propeller, and engine physics.
+                  The founding team brought that problem to IIT Madras, combining naval-architecture
+                  physics with machine learning. Using real noon-report data from working tankers,
+                  the first version of AFCOS was built and validated against data from two vessels
+                  with MAN B&amp;W two-stroke engines — achieving 3.3–3.6% mean absolute percentage
+                  error in fuel prediction.
                 </p>
                 <p>
-                  The company is incubated at the Gopalakrishnan-Deshpande Centre, IIT Madras,
-                  under the Department of Science and Technology (DST) I-NCUBATE programme.
+                  Sea Link Electrical and Software was founded in 2026 to turn that research into
+                  products: fuel and voyage optimisation today, and propulsion, controls and
+                  autonomy systems designed in India next. The company is incubated at the
+                  Gopalakrishnan-Deshpande Centre, IIT Madras, under the Department of Science and
+                  Technology (DST) I-NCUBATE programme, and recognised by Startup India
+                  (Department for Promotion of Industry and Internal Trade).
                 </p>
               </div>
             </div>
@@ -155,19 +154,16 @@ export default function AboutClient() {
             <p className="section-label">Research &amp; publications</p>
             <h2>Published work</h2>
             <p style={{ color: '#a8c0d8', marginBottom: 32, maxWidth: 640 }}>
-              The following papers underpin the physics-informed models in AFCOS.
+              The following paper underpins the physics-informed models in AFCOS.
             </p>
           </FadeUp>
           <FadeUp delay={0.06}>
             <ul className="publications-list">
               <li className="publication-item">
-                <span className="publication-venue">38th National Marine Convention · Institute of Engineers (India) · Chennai · 11–12 September</span>
+                <span className="publication-venue">38th National Marine Convention · The Institution of Engineers (India) · Chennai · 11–12 September 2026</span>
                 <p className="publication-title">AFCOS: An Adaptive Fuel and Course Optimisation System for Marine Vessels using Physics-Informed Machine Learning</p>
-                <p style={{ fontSize: 13, color: '#a8c0d8', margin: '0 0 6px' }}>
-                  Shailesh Yadav, Vinay Kr. Tripathi, Sagar Yadav
-                </p>
                 <p style={{ fontSize: 13, color: '#a8c0d8', margin: 0 }}>
-                  Presented at Holiday Inn, Chennai
+                  Shailesh Yadav, Vinay Kr. Tripathi, Sagar Yadav
                 </p>
               </li>
             </ul>
@@ -213,14 +209,15 @@ export default function AboutClient() {
               <div className="incubation-logos">
                 <img src="/assets/dst-logo.png" alt="Department of Science &amp; Technology (DST), Government of India" width={198} height={71} loading="lazy" decoding="async" />
                 <span className="incubation-divider" aria-hidden="true" />
-                <img src="/assets/dst-nidhi-logo.png" alt="DST NIDHI — Start-to-Scale Startup Support" width={203} height={72} loading="lazy" decoding="async" />
+                <img src="/assets/gdc-logo.png" alt="Gopalakrishnan-Deshpande Centre, IIT Madras — STEM to Startup" width={203} height={72} loading="lazy" decoding="async" />
               </div>
               <p className="incubation-text">
                 Sea Link Electrical and Software Private Limited is incubated under the{' '}
                 <strong>DST I-NCUBATE</strong> programme of the Department of Science &amp;
                 Technology (DST), Government of India, at the{' '}
                 <strong>Gopalakrishnan-Deshpande Centre for Innovation and Entrepreneurship,
-                IIT Madras</strong>.
+                IIT Madras</strong>. Recognised by <strong>Startup India</strong> (Department for
+                Promotion of Industry and Internal Trade).
               </p>
             </div>
           </FadeUp>
