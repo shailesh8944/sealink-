@@ -6,6 +6,7 @@ export type DevStage =
   | 'Under Development'
   | 'Bench Tested'
   | 'Field Tested'
+  | 'Validated on vessel data'
   | 'Deployed'
   | 'Deployed at Sea'
   | 'Target'
